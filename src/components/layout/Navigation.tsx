@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -55,9 +54,9 @@ const Navigation = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-10 h-10 rounded-full bg-campus-blue flex items-center justify-center">
-            <span className="text-white font-playfair font-bold text-xl">C</span>
+            <span className="text-white font-playfair font-bold text-xl">W</span>
           </div>
-          <span className="text-campus-blue font-playfair font-bold text-xl hidden md:block">Campus Digital Sphere</span>
+          <span className="text-campus-blue font-playfair font-bold text-xl hidden md:block">Witts College Namulada</span>
         </Link>
 
         {/* Desktop Navigation */}

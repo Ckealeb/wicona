@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -11,9 +10,9 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                <span className="text-campus-blue font-playfair font-bold text-xl">C</span>
+                <span className="text-campus-blue font-playfair font-bold text-xl">W</span>
               </div>
-              <span className="font-playfair font-bold text-xl">Campus Digital</span>
+              <span className="font-playfair font-bold text-xl">Witts College Namulada</span>
             </Link>
             <p className="text-sm mb-4">
               Empowering students with knowledge and skills for the digital future.
@@ -68,10 +67,10 @@ const Footer = () => {
           <div>
             <h3 className="font-playfair font-bold text-lg mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 text-sm">
-              <p>123 Campus Drive</p>
-              <p>Education City, ED 12345</p>
+              <p>Namulada Campus</p>
+              <p>Bungoma County, Kenya</p>
               <p>Phone: (123) 456-7890</p>
-              <p>Email: info@campusdigital.edu</p>
+              <p>Email: info@wittscollege.edu</p>
             </address>
             <Link to="/contact" className="inline-block mt-4 px-4 py-2 bg-campus-amber text-campus-blue rounded hover:opacity-90 transition-opacity font-medium">
               Get in Touch
