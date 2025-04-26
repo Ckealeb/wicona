@@ -1,12 +1,9 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-
 const AboutSection = () => {
-  return (
-    <section className="py-16 bg-white">
+  return <section className="py-16 bg-white">
       <div className="campus-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -49,7 +46,7 @@ const AboutSection = () => {
               </TabsContent>
             </Tabs>
 
-            <div className="mt-8">
+            <div className="mt-8 bg-lime-50">
               <Link to="/about" className="btn-primary inline-block">
                 Learn More About Us
               </Link>
@@ -58,21 +55,15 @@ const AboutSection = () => {
 
           <div className="relative">
             <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80" 
-                alt="Campus grounds" 
-                className="w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80" alt="Campus grounds" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-6 -left-6 p-6 bg-campus-blue text-white rounded-lg shadow-lg max-w-xs">
+            <div className="absolute -bottom-6 -left-6 p-6 text-white rounded-lg shadow-lg max-w-xs bg-lime-700">
               <p className="font-playfair font-bold text-2xl mb-2">Est. 1995</p>
               <p className="text-sm">Over 25 years of educational excellence and innovation</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
