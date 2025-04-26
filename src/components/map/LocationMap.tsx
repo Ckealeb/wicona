@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { MapPin } from 'lucide-react';
 
-// Bungoma coordinates (approximate)
-const BUNGOMA_COORDINATES = [34.5606, 0.5640];
+// Bungoma coordinates (approximate) as [longitude, latitude]
+const BUNGOMA_COORDINATES: [number, number] = [34.5606, 0.5640];
 
 const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -15,7 +14,6 @@ const LocationMap = () => {
   useEffect(() => {
     if (!mapContainer.current) return;
     
-    // Initialize map only if we have a token
     if (mapboxToken) {
       mapboxgl.accessToken = mapboxToken;
       
