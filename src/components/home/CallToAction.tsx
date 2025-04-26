@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
 const CallToAction = () => {
-  return (
-    <section className="py-16 bg-campus-teal">
+  return <section className="py-16 bg-lime-600">
       <div className="campus-container text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
@@ -24,8 +21,6 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CallToAction;
