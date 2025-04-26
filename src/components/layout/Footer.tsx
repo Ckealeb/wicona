@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="bg-campus-blue text-white">
-      <div className="campus-container py-12">
+  return <footer className="bg-campus-blue text-white">
+      <div className="campus-container py-12 bg-lime-900 rounded-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Logo and Brief */}
           <div>
@@ -87,8 +85,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
