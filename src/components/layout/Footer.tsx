@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/20 text-sm text-center">
+        <div className="mt-12 pt-8 border-t border-white/20 text-sm text-center bg-lime-950">
           <p>© {new Date().getFullYear()} Campus Digital Sphere. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link to="/privacy" className="hover:text-campus-amber transition-colors">Privacy Policy</Link>
