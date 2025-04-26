@@ -44,19 +44,26 @@ const Navigation = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
       {/* Announcement Bar */}
-      <div className="announcement-bar text-center">
-        <p className="text-sm font-medium">Registration open for 2025-2026 academic year! <a href="/admissions" className="underline font-bold">Apply now</a></p>
+      <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
+        <p className="text-sm font-medium">
+          Registration open for 2025-2026 academic year! 
+          <a href="/admissions" className="underline font-bold ml-1">Apply now</a>
+        </p>
       </div>
       
       <nav className="campus-container flex items-center justify-between py-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 rounded-full bg-campus-blue flex items-center justify-center">
-            <span className="text-white font-playfair font-bold text-xl">W</span>
-          </div>
-          <span className="text-campus-blue font-playfair font-bold text-xl hidden md:block">Witts College Namulada</span>
+        <Link to="/" className="futuristic-logo">
+          <img
+            src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png"
+            alt="Witts College Namulada"
+            className="w-12 h-12 object-contain"
+          />
+          <span className="futuristic-text ml-2 text-xl hidden md:block">
+            Witts College Namulada
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -99,8 +106,12 @@ const Navigation = () => {
 
         {/* Quick Access Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Link to="/portal" className="btn-secondary">Portal Login</Link>
-          <Link to="/calendar" className="text-campus-blue hover:text-campus-teal transition-colors">Calendar</Link>
+          <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors">
+            Portal Login
+          </Link>
+          <Link to="/calendar" className="text-campus-primary hover:text-campus-secondary transition-colors">
+            Calendar
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -158,7 +169,7 @@ const Navigation = () => {
               <Link to="/portal" className="block btn-secondary text-center">
                 Portal Login
               </Link>
-              <Link to="/calendar" className="block text-center text-campus-blue">
+              <Link to="/calendar" className="block text-center text-campus-primary">
                 Calendar
               </Link>
             </div>
