@@ -2,13 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, GraduationCap } from "lucide-react";
-
 interface NavLink {
   title: string;
   path: string;
   children?: NavLink[];
 }
-
 const navLinks: NavLink[] = [{
   title: "Home",
   path: "/"
@@ -51,15 +49,12 @@ const navLinks: NavLink[] = [{
   title: "Contact",
   path: "/contact"
 }];
-
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
   };
-
   return <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
         <p className="text-sm font-medium">
@@ -71,13 +66,9 @@ const Navigation = () => {
       <nav className="campus-container flex items-center justify-between py-4">
         <Link to="/" className="group border-4 border-double border-campus-primary rounded-lg p-1">
           <div className="relative flex items-center">
-            <img 
-              src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
-              alt="Witts College Namulada" 
-              className="w-16 h-16 object-contain transition-transform group-hover:scale-105"
-            />
+            <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-16 h-16 object-contain transition-transform group-hover:scale-105" />
             <div className="ml-3 flex flex-col items-start">
-              <span className="text-xl font-bold tracking-wide text-campus-primary">WITS COLLEGE</span>
+              <span className="font-bold tracking-wide text-campus-primary text-lg">WITS COLLEGE</span>
               <span className="text-sm tracking-widest text-campus-secondary">NAMULANDA</span>
             </div>
           </div>
@@ -145,5 +136,4 @@ const Navigation = () => {
         </div>}
     </header>;
 };
-
 export default Navigation;
