@@ -120,6 +120,7 @@ export default {
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
         inter: ['Inter', 'sans-serif'],
+        'times': ['Times New Roman', 'Times', 'serif'],
       },
     }
   },

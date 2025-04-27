@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
@@ -7,7 +6,6 @@ const Footer = () => {
   return <footer className="bg-campus-blue text-white">
       <div className="campus-container py-12 bg-lime-900 rounded-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: Logo and Brief */}
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-6 group border-4 border-double border-campus-primary rounded-lg p-1">
               <div className="relative">
@@ -18,7 +16,7 @@ const Footer = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-playfair font-bold text-lg tracking-wide text-campus-accent">WITS COLLEGE</span>
+                <span className="font-times font-bold text-lg tracking-wide text-campus-accent">WITS COLLEGE</span>
                 <span className="text-sm tracking-widest text-campus-accent/80">NAMULANDA</span>
               </div>
             </Link>
@@ -47,7 +45,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div>
             <h3 className="font-playfair font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -59,7 +56,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Resources */}
           <div>
             <h3 className="font-playfair font-bold text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
@@ -71,7 +67,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
           <div>
             <h3 className="font-playfair font-bold text-lg mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 text-sm">
