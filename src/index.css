@@ -115,14 +115,13 @@
   }
   
   .futuristic-logo {
-    @apply relative inline-flex items-center;
+    @apply relative inline-flex items-center p-3 transition-all duration-300;
     box-shadow: 
       0 0 10px theme('colors.campus.glow'),
       0 0 20px theme('colors.campus.accent'),
       inset 0 0 15px theme('colors.campus.glow');
     border: 2px solid theme('colors.campus.border');
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    border-radius: 1rem;
     background: linear-gradient(45deg, 
       rgba(0,100,0,0.1),
       rgba(0,255,0,0.05));
@@ -130,10 +129,11 @@
   }
 
   .futuristic-text {
-    @apply font-bold text-campus-primary;
+    @apply font-bold text-campus-primary transition-all duration-300;
     text-shadow: 
       0 0 5px theme('colors.campus.glow'),
       0 0 10px theme('colors.campus.accent');
+    letter-spacing: 0.05em;
   }
   
   .btn-primary {

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, GraduationCap } from "lucide-react";
+
 interface NavLink {
   title: string;
   path: string;
   children?: NavLink[];
 }
+
 const navLinks: NavLink[] = [{
   title: "Home",
   path: "/"
@@ -49,14 +51,16 @@ const navLinks: NavLink[] = [{
   title: "Contact",
   path: "/contact"
 }];
+
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
   };
+
   return <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
-      {/* Announcement Bar */}
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
         <p className="text-sm font-medium">
           Registration open for 2025-2026 academic year! 
@@ -65,13 +69,21 @@ const Navigation = () => {
       </div>
       
       <nav className="campus-container flex items-center justify-between py-4">
-        {/* Logo */}
-        <Link to="/" className="futuristic-logo">
-          <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-12 h-12 object-contain" />
-          <span className="futuristic-text ml-2 hidden md:block text-lime-950 text-base text-left">WITS COLLEGE NAMULANDA</span>
+        <Link to="/" className="futuristic-logo group">
+          <div className="relative">
+            <img 
+              src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
+              alt="Witts College Namulada" 
+              className="w-16 h-16 object-contain transition-transform group-hover:scale-105"
+            />
+            <div className="absolute -inset-1 bg-gradient-to-r from-campus-accent/30 to-campus-primary/30 blur-sm group-hover:blur -z-10"></div>
+          </div>
+          <div className="ml-3 flex flex-col items-start">
+            <span className="futuristic-text text-xl font-bold tracking-wide">WITS COLLEGE</span>
+            <span className="futuristic-text text-sm tracking-widest">NAMULANDA</span>
+          </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8 bg-lime-50">
           {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer" onClick={() => link.children && toggleDropdown(link.title)}>
@@ -91,7 +103,6 @@ const Navigation = () => {
             </div>)}
         </div>
 
-        {/* Quick Access Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
           <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors">
             Portal Login
@@ -101,13 +112,11 @@ const Navigation = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button className="lg:hidden text-campus-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
       {mobileMenuOpen && <div className="lg:hidden bg-white shadow-lg">
           <div className="py-4 px-6 space-y-4">
             {navLinks.map(link => <div key={link.title} className="py-2">
@@ -137,4 +146,5 @@ const Navigation = () => {
         </div>}
     </header>;
 };
+
 export default Navigation;
