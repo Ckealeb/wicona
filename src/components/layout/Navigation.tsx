@@ -68,9 +68,7 @@ const Navigation = () => {
         {/* Logo */}
         <Link to="/" className="futuristic-logo">
           <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-12 h-12 object-contain" />
-          <span className="futuristic-text ml-2 text-xl hidden md:block">
-            Witts College Namulada
-          </span>
+          <span className="futuristic-text ml-2 text-xl hidden md:block text-lime-950 text-center">WITS COLLEGE NAMULANDA</span>
         </Link>
 
         {/* Desktop Navigation */}
