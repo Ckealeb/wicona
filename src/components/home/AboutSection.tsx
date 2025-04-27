@@ -16,7 +16,7 @@ const AboutSection = () => {
             </p>
             
             <Tabs defaultValue="mission" className="mt-8">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-3 bg-lime-400">
                 <TabsTrigger value="mission">Our Mission</TabsTrigger>
                 <TabsTrigger value="vision">Our Vision</TabsTrigger>
                 <TabsTrigger value="values">Core Values</TabsTrigger>
