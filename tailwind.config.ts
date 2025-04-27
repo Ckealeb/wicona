@@ -82,6 +82,12 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
+      borderWidth: {
+        '3': '3px',
+      },
+      borderStyle: {
+        'double': 'double',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

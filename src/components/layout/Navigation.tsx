@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -69,7 +70,7 @@ const Navigation = () => {
       </div>
       
       <nav className="campus-container flex items-center justify-between py-4">
-        <Link to="/" className="futuristic-logo group">
+        <Link to="/" className="futuristic-logo group border-4 border-double border-campus-primary/50 rounded-lg p-1">
           <div className="relative">
             <img 
               src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
