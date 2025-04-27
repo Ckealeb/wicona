@@ -74,7 +74,7 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8 bg-lime-200">
+        <div className="hidden lg:flex items-center space-x-8 bg-lime-50">
           {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer" onClick={() => link.children && toggleDropdown(link.title)}>
                 <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors">
