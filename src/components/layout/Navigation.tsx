@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -70,18 +69,17 @@ const Navigation = () => {
       </div>
       
       <nav className="campus-container flex items-center justify-between py-4">
-        <Link to="/" className="futuristic-logo group border-4 border-double border-campus-primary/50 rounded-lg p-1">
-          <div className="relative">
+        <Link to="/" className="group border-4 border-double border-campus-primary rounded-lg p-1">
+          <div className="relative flex items-center">
             <img 
               src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
               alt="Witts College Namulada" 
               className="w-16 h-16 object-contain transition-transform group-hover:scale-105"
             />
-            <div className="absolute -inset-1 bg-gradient-to-r from-campus-accent/30 to-campus-primary/30 blur-sm group-hover:blur -z-10"></div>
-          </div>
-          <div className="ml-3 flex flex-col items-start">
-            <span className="futuristic-text text-xl font-bold tracking-wide">WITS COLLEGE</span>
-            <span className="futuristic-text text-sm tracking-widest">NAMULANDA</span>
+            <div className="ml-3 flex flex-col items-start">
+              <span className="text-xl font-bold tracking-wide text-campus-primary">WITS COLLEGE</span>
+              <span className="text-sm tracking-widest text-campus-secondary">NAMULANDA</span>
+            </div>
           </div>
         </Link>
 
