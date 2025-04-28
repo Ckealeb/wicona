@@ -18,9 +18,9 @@ const Contact = () => {
                     <MapPin className="mt-1 text-green-600" size={18} />
                     <div>
                       <p>Witts College Namulada</p>
-                      <p>Bungoma County, Kenya</p>
-                      <p>Postal Address: P.O. Box 123-50200</p>
-                      <p>Campus Location: Off Bungoma-Webuye Road</p>
+                      <p>Wakiso, Uganda</p>
+                      <p>Postal Address: P.O. Box </p>
+                      <p>Campus Location: Along Entebbe Road</p>
                     </div>
                   </div>
                 </address>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
-
 const Footer = () => {
   return <footer className="bg-campus-blue text-white">
       <div className="campus-container py-12 bg-lime-900 rounded-sm">
@@ -9,11 +8,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-6 group border-4 border-double border-campus-primary rounded-lg p-1">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
-                  alt="Witts College Namulada" 
-                  className="w-14 h-14 object-contain bg-white/10 rounded-lg p-2 transition-transform group-hover:scale-105"
-                />
+                <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-14 h-14 object-contain bg-white/10 rounded-lg p-2 transition-transform group-hover:scale-105" />
               </div>
               <div className="flex flex-col">
                 <span className="font-times font-bold text-lg tracking-wide text-campus-accent">WITS COLLEGE</span>
@@ -71,7 +66,7 @@ const Footer = () => {
             <h3 className="font-playfair font-bold text-lg mb-4">Contact Us</h3>
             <address className="not-italic space-y-2 text-sm">
               <p>Namulada Campus</p>
-              <p>Bungoma County, Kenya</p>
+              <p>Wakiso, Uganda</p>
               <p>Phone: (123) 456-7890</p>
               <p>Email: info@wittscollege.edu</p>
             </address>
@@ -92,5 +87,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
