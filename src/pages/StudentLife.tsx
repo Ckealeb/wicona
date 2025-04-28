@@ -1,14 +1,11 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Book, Users, Award, Star } from "lucide-react";
-
 const StudentLife = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
@@ -23,7 +20,7 @@ const StudentLife = () => {
           </div>
 
           <Tabs defaultValue="activities" className="mb-12">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-lime-400">
               <TabsTrigger value="activities">Activities</TabsTrigger>
               <TabsTrigger value="clubs">Clubs</TabsTrigger>
               <TabsTrigger value="sports">Sports</TabsTrigger>
@@ -32,7 +29,7 @@ const StudentLife = () => {
             <TabsContent value="activities" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Cultural Events</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Annual Cultural Festival</li>
@@ -44,7 +41,7 @@ const StudentLife = () => {
                 </Card>
 
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Academic Activities</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Science Fair</li>
@@ -60,7 +57,7 @@ const StudentLife = () => {
             <TabsContent value="clubs" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Academic Clubs</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Science Club</li>
@@ -72,7 +69,7 @@ const StudentLife = () => {
                 </Card>
 
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Social Clubs</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Environmental Club</li>
@@ -88,7 +85,7 @@ const StudentLife = () => {
             <TabsContent value="sports" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Team Sports</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Football</li>
@@ -100,7 +97,7 @@ const StudentLife = () => {
                 </Card>
 
                 <Card className="bg-white border-green-100">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Individual Sports</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Athletics</li>
@@ -114,7 +111,7 @@ const StudentLife = () => {
             </TabsContent>
           </Tabs>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-green-100">
+          <div className="p-8 rounded-lg shadow-sm border border-green-100 bg-lime-200">
             <h3 className="text-2xl font-semibold mb-6 text-green-800">Student Support Services</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-green-50 border-green-100">
@@ -151,8 +148,6 @@ const StudentLife = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default StudentLife;
