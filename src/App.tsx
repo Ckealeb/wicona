@@ -23,11 +23,15 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about/leadership" element={<Leadership />} />
+          <Route path="/about/virtual-tour" element={<VirtualTour />} />
+          <Route path="/about/gallery" element={<Gallery />} />
           <Route path="/academics" element={<Academics />} />
+          <Route path="/academics/curriculum" element={<Curriculum />} />
+          <Route path="/academics/elearning" element={<ELearning />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/student-life" element={<StudentLife />} />
           <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
