@@ -1,10 +1,16 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
-    <section className="py-16 bg-lime-600 relative">
+    <section 
+      className="py-16 bg-lime-600 relative"
+      style={{
+        backgroundImage: 'url("/lovable-uploads/2113b2de-a57a-48a0-9f96-393b1fd91b21.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="campus-container text-center relative z-10">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
@@ -23,6 +29,7 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
+      <div className="absolute inset-0 bg-lime-600/70" />
       <div className="absolute inset-0">
         <img 
           src="/lovable-uploads/2113b2de-a57a-48a0-9f96-393b1fd91b21.png" 
