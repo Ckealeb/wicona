@@ -3,8 +3,10 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import LocationMap from "@/components/map/LocationMap";
 import { MapPin, Phone, Mail } from "lucide-react";
+
 const Contact = () => {
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
@@ -54,6 +56,8 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;
