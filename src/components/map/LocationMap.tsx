@@ -1,10 +1,10 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { MapPin } from 'lucide-react';
 
-// Bungoma coordinates (approximate) as [longitude, latitude]
-const BUNGOMA_COORDINATES: [number, number] = [34.5606, 0.5640];
+// Witts College Namulada coordinates (approximate location along Entebbe Road)
+const SCHOOL_COORDINATES: [number, number] = [32.5555, 0.1833]; // Longitude, Latitude
 
 const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -20,13 +20,16 @@ const LocationMap = () => {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v12',
-        center: BUNGOMA_COORDINATES,
-        zoom: 15
+        center: SCHOOL_COORDINATES,
+        zoom: 14
       });
 
-      // Add marker
-      new mapboxgl.Marker()
-        .setLngLat(BUNGOMA_COORDINATES)
+      // Add marker for the school
+      const marker = new mapboxgl.Marker({
+        color: "#10B981", // green color to match the theme
+      })
+        .setLngLat(SCHOOL_COORDINATES)
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Witts College Namulada</h3><p>Along Entebbe Road</p>"))
         .addTo(map.current);
 
       // Add navigation controls
@@ -56,7 +59,7 @@ const LocationMap = () => {
           />
         </div>
       )}
-      <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-campus-teal">
+      <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-green-100">
         <div ref={mapContainer} className="absolute inset-0" />
       </div>
     </div>
