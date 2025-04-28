@@ -63,18 +63,18 @@ const Navigation = () => {
         </p>
       </div>
       
-      <nav className="campus-container flex items-center justify-between py-4 bg-lime-200">
+      <nav className="campus-container flex items-center justify-between py-4 bg-lime-400">
         <Link to="/" className="group border-4 border-double border-campus-primary rounded-lg p-1">
           <div className="relative flex items-center">
             <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-16 h-16 object-contain transition-transform group-hover:scale-105" />
             <div className="ml-3 flex flex-col items-start">
-              <span className="font-times tracking-wide text-campus-primary text-lg font-extrabold">WITS COLLEGE</span>
-              <span className="tracking-widest text-lg font-semibold text-lime-600">NAMULANDA</span>
+              <span className="font-times tracking-wide text-lg font-extrabold text-lime-950">WITS COLLEGE</span>
+              <span className="tracking-widest text-lg font-semibold text-lime-700">NAMULANDA</span>
             </div>
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-8 bg-lime-200">
+        <div className="hidden lg:flex items-center space-x-8 bg-lime-400">
           {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer" onClick={() => link.children && toggleDropdown(link.title)}>
                 <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors">
