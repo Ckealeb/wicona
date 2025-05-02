@@ -18,8 +18,8 @@ const stats: Stat[] = [{
   suffix: "+"
 }, {
   id: 3,
-  value: 150,
-  label: "Expert Faculty",
+  value: 20,
+  label: "Teaching Subjects",
   suffix: ""
 }, {
   id: 4,
