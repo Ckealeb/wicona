@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Leadership from "./pages/about/Leadership";
+import OrganizationChart from "./pages/about/OrganizationChart";
 import VirtualTour from "./pages/about/VirtualTour";
 import Gallery from "./pages/about/Gallery";
 import Academics from "./pages/Academics";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/leadership" element={<Leadership />} />
+          <Route path="/about/organization-chart" element={<OrganizationChart />} />
           <Route path="/about/virtual-tour" element={<VirtualTour />} />
           <Route path="/about/gallery" element={<Gallery />} />
           <Route path="/academics" element={<Academics />} />
