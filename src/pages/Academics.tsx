@@ -4,7 +4,8 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GraduationCap, BookOpen, Users, Star } from "lucide-react";
+import { GraduationCap, BookOpen, Users, Award, Bookmark, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Academics = () => {
   return (
@@ -16,31 +17,36 @@ const Academics = () => {
           
           <div className="prose max-w-none mb-12">
             <p className="text-lg text-gray-700">
-              At Witts College Namulada, we offer a comprehensive curriculum that prepares students 
-              for success in their academic and professional journeys. Our programs are designed to 
-              foster critical thinking, creativity, and practical skills.
+              At Witts College Namulada, we offer a comprehensive curriculum that follows the Uganda National 
+              Curriculum Development Centre (NCDC) guidelines. Our programs are designed to foster critical 
+              thinking, creativity, and practical skills for success in national examinations and beyond.
             </p>
           </div>
 
           <Tabs defaultValue="secondary" className="mb-12">
             <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="secondary">Secondary Education</TabsTrigger>
-              <TabsTrigger value="technical">Technical Programs</TabsTrigger>
-              <TabsTrigger value="extra">Extra-Curricular</TabsTrigger>
+              <TabsTrigger value="technical">Co-Curricular</TabsTrigger>
+              <TabsTrigger value="assessment">Assessment</TabsTrigger>
             </TabsList>
             
             <TabsContent value="secondary" className="space-y-6">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 text-green-800">Secondary School Curriculum</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-green-800">Uganda National Curriculum</h3>
                   <div className="space-y-4">
-                    <p className="text-gray-600">Our secondary education program follows the 8-4-4 system with additional enrichment activities:</p>
+                    <p className="text-gray-600">Our education program follows the NCDC framework with:</p>
                     <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                      <li>Core Subjects (Mathematics, Languages, Sciences)</li>
-                      <li>Humanities and Social Sciences</li>
-                      <li>Computer Studies and ICT Integration</li>
-                      <li>Physical Education and Sports</li>
+                      <li>O-Level Program (S1-S4): Comprehensive coverage of core and elective subjects leading to UCE</li>
+                      <li>A-Level Program (S5-S6): Specialized subject combinations (Science/Arts) leading to UACE</li>
+                      <li>Computer Studies and ICT Integration across all levels</li>
+                      <li>Career Guidance and Counseling services</li>
                     </ul>
+                    <div className="mt-4">
+                      <Link to="/academics/curriculum" className="text-lime-700 font-medium hover:text-lime-900 hover:underline">
+                        View Complete Curriculum Details →
+                      </Link>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -49,32 +55,40 @@ const Academics = () => {
             <TabsContent value="technical" className="space-y-6">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 text-green-800">Technical and Vocational Training</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-green-800">Co-Curricular Activities</h3>
                   <div className="space-y-4">
-                    <p className="text-gray-600">We offer practical skills training in:</p>
+                    <p className="text-gray-600">We offer comprehensive development through:</p>
                     <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                      <li>Computer Programming and IT</li>
-                      <li>Agricultural Technology</li>
-                      <li>Business Studies</li>
-                      <li>Creative Arts and Design</li>
+                      <li>Sports Teams (Football, Basketball, Netball, Athletics)</li>
+                      <li>Music, Dance and Drama</li>
+                      <li>Debate and Public Speaking</li>
+                      <li>Science and Innovation Clubs</li>
+                      <li>Environmental Conservation Club</li>
+                      <li>Agricultural Club</li>
                     </ul>
                   </div>
                 </CardContent>
               </Card>
             </TabsContent>
             
-            <TabsContent value="extra" className="space-y-6">
+            <TabsContent value="assessment" className="space-y-6">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 text-green-800">Extra-Curricular Activities</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-green-800">Academic Assessment</h3>
                   <div className="space-y-4">
-                    <p className="text-gray-600">Comprehensive development through:</p>
+                    <p className="text-gray-600">Our comprehensive assessment framework includes:</p>
                     <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                      <li>Sports Teams and Athletics</li>
-                      <li>Music and Drama Clubs</li>
-                      <li>Science and Innovation Club</li>
-                      <li>Environmental Conservation Club</li>
+                      <li>Continuous Assessment Tests (CATs)</li>
+                      <li>Mid-term Examinations</li>
+                      <li>End-of-term Examinations</li>
+                      <li>Practical Projects and Presentations</li>
+                      <li>National Examinations Preparation</li>
                     </ul>
+                    <div className="mt-4">
+                      <Link to="/academics/homework-exams" className="text-lime-700 font-medium hover:text-lime-900 hover:underline">
+                        View Homework & Examination Details →
+                      </Link>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -88,7 +102,7 @@ const Academics = () => {
                   <GraduationCap className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold mb-2">Expert Teachers</h3>
-                <p className="text-gray-600">Qualified and experienced educators</p>
+                <p className="text-gray-600">Qualified and experienced educators with specialized subject expertise</p>
               </CardContent>
             </Card>
 
@@ -98,7 +112,7 @@ const Academics = () => {
                   <BookOpen className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold mb-2">Modern Resources</h3>
-                <p className="text-gray-600">Up-to-date learning materials</p>
+                <p className="text-gray-600">Up-to-date learning materials and digital resources</p>
               </CardContent>
             </Card>
 
@@ -108,17 +122,17 @@ const Academics = () => {
                   <Users className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold mb-2">Small Classes</h3>
-                <p className="text-gray-600">Personalized attention</p>
+                <p className="text-gray-600">Personalized attention with manageable class sizes</p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-green-100">
               <CardContent className="pt-6">
                 <div className="text-green-600 mb-4">
-                  <Star className="h-8 w-8" />
+                  <Award className="h-8 w-8" />
                 </div>
                 <h3 className="font-semibold mb-2">Excellence</h3>
-                <p className="text-gray-600">Proven academic success</p>
+                <p className="text-gray-600">Consistently strong performance in national exams</p>
               </CardContent>
             </Card>
           </div>

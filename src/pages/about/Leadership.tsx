@@ -3,7 +3,7 @@ import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Shield, Star, School } from "lucide-react";
+import { User, Shield, Star, School, Award } from "lucide-react";
 
 const Leadership = () => {
   return (
@@ -72,6 +72,21 @@ const Leadership = () => {
                     <p className="text-gray-600 mb-2">Dean Of Studies (Middle School)</p>
                     <p className="text-sm text-gray-500">
                       12+ years administrative experience
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="text-center">
+                    <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+                      <Award className="w-16 h-16 text-green-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-green-800">Mr. BEGGUMA FABIAN</h3>
+                    <p className="text-gray-600 mb-2">Dean Of Studies (Upper School)</p>
+                    <p className="text-sm text-gray-500">
+                      10+ years academic leadership
                     </p>
                   </div>
                 </CardContent>

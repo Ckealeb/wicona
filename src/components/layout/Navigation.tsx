@@ -28,10 +28,6 @@ const navLinks: NavLink[] = [
         path: "/about/leadership"
       },
       {
-        title: "Organization Chart",
-        path: "/about/organization-chart"
-      },
-      {
         title: "Virtual Tour",
         path: "/about/virtual-tour"
       },

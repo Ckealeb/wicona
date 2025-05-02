@@ -7,12 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Leadership from "./pages/about/Leadership";
-import OrganizationChart from "./pages/about/OrganizationChart";
 import VirtualTour from "./pages/about/VirtualTour";
 import Gallery from "./pages/about/Gallery";
 import Academics from "./pages/Academics";
 import Curriculum from "./pages/academics/Curriculum";
 import ELearning from "./pages/academics/ELearning";
+import HomeworkExams from "./pages/academics/HomeworkExams";
 import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Contact from "./pages/Contact";
@@ -30,12 +30,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/leadership" element={<Leadership />} />
-          <Route path="/about/organization-chart" element={<OrganizationChart />} />
           <Route path="/about/virtual-tour" element={<VirtualTour />} />
           <Route path="/about/gallery" element={<Gallery />} />
           <Route path="/academics" element={<Academics />} />
           <Route path="/academics/curriculum" element={<Curriculum />} />
           <Route path="/academics/elearning" element={<ELearning />} />
+          <Route path="/academics/homework-exams" element={<HomeworkExams />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/student-life" element={<StudentLife />} />
           <Route path="/contact" element={<Contact />} />
