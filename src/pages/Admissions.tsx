@@ -1,22 +1,13 @@
-
 import React, { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Book, Award, Star } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ApplicationForm from "@/components/admissions/ApplicationForm";
-
 const Admissions = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
   return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
@@ -24,10 +15,7 @@ const Admissions = () => {
           <h1 className="section-title">Admissions</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700">
-              Join Witts College Namulada and embark on a journey of academic excellence and personal growth. 
-              We welcome students who are eager to learn, grow, and contribute to our vibrant community.
-            </p>
+            <p className="text-lg text-gray-700">Join Wits College Namulada and embark on a journey of academic excellence and personal growth. We welcome students who are eager to learn, grow, and contribute to our vibrant community.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -37,11 +25,11 @@ const Admissions = () => {
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start gap-2">
                     <Star className="h-5 w-5 mt-1 text-green-600" />
-                    <span>Completed primary education with KCPE results</span>
+                    <span>Completed primary education with PLE results and UCE for senior five applicants</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Star className="h-5 w-5 mt-1 text-green-600" />
-                    <span>School leaving certificate from previous institution</span>
+                    <span>School end of term report from previous institution</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Star className="h-5 w-5 mt-1 text-green-600" />
@@ -99,10 +87,7 @@ const Admissions = () => {
           </div>
 
           <div className="text-center">
-            <Button 
-              className="bg-green-600 hover:bg-green-700"
-              onClick={() => setIsDialogOpen(true)}
-            >
+            <Button className="bg-green-600 hover:bg-green-700" onClick={() => setIsDialogOpen(true)}>
               Start Your Application
             </Button>
           </div>
@@ -123,5 +108,4 @@ const Admissions = () => {
       </Dialog>
     </div>;
 };
-
 export default Admissions;
