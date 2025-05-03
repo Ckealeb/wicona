@@ -1,88 +1,64 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-
 interface NavLink {
   title: string;
   path: string;
   children?: NavLink[];
 }
-
-const navLinks: NavLink[] = [
-  {
-    title: "Home",
-    path: "/"
-  },
-  {
-    title: "About Us",
-    path: "/about",
-    children: [
-      {
-        title: "Overview",
-        path: "/about"
-      },
-      {
-        title: "Leadership",
-        path: "/about/leadership"
-      },
-      {
-        title: "Virtual Tour",
-        path: "/about/virtual-tour"
-      },
-      {
-        title: "Media Gallery",
-        path: "/about/gallery"
-      },
-      {
-        title: "Student Life",
-        path: "/student-life"
-      }
-    ]
-  },
-  {
-    title: "Academics",
-    path: "/academics",
-    children: [
-      {
-        title: "Curriculum",
-        path: "/academics/curriculum"
-      },
-      {
-        title: "E-Learning Hub",
-        path: "/academics/elearning"
-      },
-      {
-        title: "Homework & Exams",
-        path: "/academics/homework-exams"
-      },
-      {
-        title: "Calendar",
-        path: "/calendar"
-      }
-    ]
-  },
-  {
-    title: "Admissions",
-    path: "/admissions"
-  },
-  {
-    title: "Contact",
-    path: "/contact"
-  }
-];
-
+const navLinks: NavLink[] = [{
+  title: "Home",
+  path: "/"
+}, {
+  title: "About Us",
+  path: "/about",
+  children: [{
+    title: "Overview",
+    path: "/about"
+  }, {
+    title: "Leadership",
+    path: "/about/leadership"
+  }, {
+    title: "Virtual Tour",
+    path: "/about/virtual-tour"
+  }, {
+    title: "Media Gallery",
+    path: "/about/gallery"
+  }, {
+    title: "Student Life",
+    path: "/student-life"
+  }]
+}, {
+  title: "Academics",
+  path: "/academics",
+  children: [{
+    title: "Curriculum",
+    path: "/academics/curriculum"
+  }, {
+    title: "E-Learning Hub",
+    path: "/academics/elearning"
+  }, {
+    title: "Homework & Exams",
+    path: "/academics/homework-exams"
+  }, {
+    title: "Calendar",
+    path: "/calendar"
+  }]
+}, {
+  title: "Admissions",
+  path: "/admissions"
+}, {
+  title: "Contact",
+  path: "/contact"
+}];
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
   };
-
-  return (
-    <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
+  return <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
         <p className="text-sm font-medium">
           Registration open for 2025-2026 academic year! 
@@ -102,36 +78,22 @@ const Navigation = () => {
         </Link>
 
         <div className="hidden lg:flex items-center space-x-8 bg-lime-400">
-          {navLinks.map(link => (
-            <div key={link.title} className="relative group">
+          {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer">
-                <Link 
-                  to={link.path} 
-                  className="text-gray-700 hover:text-campus-blue transition-colors"
-                  onClick={() => link.children && toggleDropdown(link.title)}
-                >
+                <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors" onClick={() => link.children && toggleDropdown(link.title)}>
                   {link.title}
                 </Link>
                 {link.children && <ChevronDown size={16} className="text-gray-500 transition-transform group-hover:rotate-180" />}
               </div>
               
-              {link.children && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              {link.children && <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="py-1">
-                    {link.children.map(childLink => (
-                      <Link 
-                        key={childLink.title} 
-                        to={childLink.path} 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white"
-                      >
+                    {link.children.map(childLink => <Link key={childLink.title} to={childLink.path} className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white">
                         {childLink.title}
-                      </Link>
-                    ))}
+                      </Link>)}
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                </div>}
+            </div>)}
         </div>
 
         <div className="hidden lg:flex items-center">
@@ -141,50 +103,26 @@ const Navigation = () => {
         </div>
 
         <button className="lg:hidden text-campus-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={24} className="bg-amber-100" /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white shadow-lg fixed right-0 top-[104px] h-screen w-1/4 overflow-y-auto">
+      {mobileMenuOpen && <div className="lg:hidden bg-white shadow-lg fixed right-0 top-[104px] h-screen w-1/4 overflow-y-auto">
           <div className="py-4 px-6 space-y-4">
-            {navLinks.map(link => (
-              <div key={link.title} className="py-2">
-                <div 
-                  className="flex items-center justify-between hover:bg-lime-100 p-2 rounded-md transition-colors" 
-                  onClick={() => link.children && toggleDropdown(link.title)}
-                >
-                  <Link 
-                    to={link.path} 
-                    className="text-gray-800 font-medium w-full" 
-                    onClick={() => !link.children && setMobileMenuOpen(false)}
-                  >
+            {navLinks.map(link => <div key={link.title} className="py-2">
+                <div className="flex items-center justify-between hover:bg-lime-100 p-2 rounded-md transition-colors" onClick={() => link.children && toggleDropdown(link.title)}>
+                  <Link to={link.path} className="text-gray-800 font-medium w-full" onClick={() => !link.children && setMobileMenuOpen(false)}>
                     {link.title}
                   </Link>
-                  {link.children && (
-                    <ChevronDown 
-                      size={20} 
-                      className={`transition-transform ${activeDropdown === link.title ? 'rotate-180' : ''}`} 
-                    />
-                  )}
+                  {link.children && <ChevronDown size={20} className={`transition-transform ${activeDropdown === link.title ? 'rotate-180' : ''}`} />}
                 </div>
                 
-                {link.children && activeDropdown === link.title && (
-                  <div className="mt-2 ml-4 space-y-2 bg-lime-50 rounded-md p-2">
-                    {link.children.map(childLink => (
-                      <Link 
-                        key={childLink.title} 
-                        to={childLink.path} 
-                        className="block py-1 text-gray-600 hover:text-campus-blue hover:bg-lime-100 p-2 rounded-md transition-colors" 
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
+                {link.children && activeDropdown === link.title && <div className="mt-2 ml-4 space-y-2 bg-lime-50 rounded-md p-2">
+                    {link.children.map(childLink => <Link key={childLink.title} to={childLink.path} className="block py-1 text-gray-600 hover:text-campus-blue hover:bg-lime-100 p-2 rounded-md transition-colors" onClick={() => setMobileMenuOpen(false)}>
                         {childLink.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                      </Link>)}
+                  </div>}
+              </div>)}
 
             <div className="pt-4 space-y-4 border-t border-gray-200">
               <Link to="/portal" className="block btn-secondary text-center p-2 hover:bg-lime-100 rounded-md transition-colors">
@@ -192,10 +130,7 @@ const Navigation = () => {
               </Link>
             </div>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Navigation;
