@@ -1,24 +1,17 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Users, Building, Award } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
-          <h1 className="section-title">About Witts College Namulada</h1>
+          <h1 className="section-title">About Wits College Namulada</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700 mb-8">
-              Founded in 1995, Witts College Namulada has been a beacon of academic excellence in Bungoma County, Kenya. 
-              Our institution is committed to nurturing well-rounded individuals through a blend of rigorous academics, 
-              character development, and practical skills training.
-            </p>
+            <p className="text-lg text-gray-700 mb-8">Founded in 2000, Wits College Namulada has been a beacon of academic excellence in Bungoma County, Kenya. Our institution is committed to nurturing well-rounded individuals through a blend of rigorous academics, character development, and practical skills training.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -37,11 +30,7 @@ const About = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-                alt="Campus Building"
-                className="rounded-lg shadow-lg object-cover h-full"
-              />
+              <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Campus Building" className="rounded-lg shadow-lg object-cover h-full" />
             </div>
           </div>
 
@@ -61,7 +50,7 @@ const About = () => {
                 <div className="text-green-600 mb-4">
                   <GraduationCap className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Modern Curriculum</h3>
+                <h3 className="text-xl font-semibold mb-2">CBC Curriculum</h3>
                 <p className="text-gray-600">Innovative programs aligned with international standards</p>
               </CardContent>
             </Card>
@@ -89,8 +78,6 @@ const About = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
