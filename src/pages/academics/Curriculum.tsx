@@ -91,7 +91,7 @@ const Curriculum = () => {
                 <h3 className="text-lg font-semibold mb-2 text-lime-700">Science Subjects:</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
                   <li>Physics</li>
-                  <li> Chemistry</li>
+                  <li>Chemistry</li>
                   <li>Biology</li>
                 </ul>
                 
@@ -105,7 +105,7 @@ const Curriculum = () => {
                 <h3 className="text-lg font-semibold mb-2 text-lime-700">Compulsory Subject:</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
                   <li>General Paper</li>
-                  <li>Computer Studies (Subsidiary)</li>
+                  <li>Computer Studies (Subsidiary)/ Subsidiary Math</li>
                 </ul>
               </div>
             </TabsContent>
