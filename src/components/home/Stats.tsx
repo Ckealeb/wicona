@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 interface Stat {
   id: number;
@@ -9,8 +10,8 @@ interface Stat {
 const stats: Stat[] = [{
   id: 1,
   value: 25,
-  label: "Years of Excellence",
-  suffix: "+"
+  label: "Years of Excellence & Ongoing",
+  suffix: ""
 }, {
   id: 2,
   value: 1500,

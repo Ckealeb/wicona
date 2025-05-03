@@ -56,11 +56,11 @@ const AboutSection = () => {
 
           <div className="relative">
             <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
-              <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80" alt="Campus grounds" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&q=80" alt="Campus grounds vintage" className="w-full h-full object-cover sepia" />
             </div>
             <div className="absolute -bottom-6 -left-6 p-6 text-white rounded-lg shadow-lg max-w-xs bg-lime-700">
               <p className="font-playfair font-bold text-2xl mb-2">Est. 2000</p>
-              <p className="text-sm">Over 20 years of educational excellence and innovation</p>
+              <p className="text-sm">25 years of educational excellence and innovation</p>
             </div>
           </div>
         </div>
