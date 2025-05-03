@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -6,10 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, GraduationCap, Star, Award, Bookmark } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 const Curriculum = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
@@ -125,7 +122,7 @@ const Curriculum = () => {
                   <li>Mathematics</li>
                   <li>English Language</li>
                   <li>Sciences (Biology, Physics, Chemistry)</li>
-                  <li>Social Studies (History, Geography)</li>
+                  <li className="bg-gray-50">Social Studies (History, Geography)</li>
                 </ul>
               </CardContent>
             </Card>
@@ -218,8 +215,6 @@ const Curriculum = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Curriculum;
