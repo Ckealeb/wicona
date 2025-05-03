@@ -141,7 +141,7 @@ const Navigation = () => {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white shadow-lg fixed right-0 top-[104px] h-screen w-1/2 overflow-y-auto">
+        <div className="lg:hidden bg-white shadow-lg fixed right-0 top-[104px] h-screen w-1/4 overflow-y-auto">
           <div className="py-4 px-6 space-y-4">
             {navLinks.map(link => (
               <div key={link.title} className="py-2">
