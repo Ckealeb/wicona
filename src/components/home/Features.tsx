@@ -25,8 +25,8 @@ const Features = () => {
     link: "/resources/mobile-app",
     color: "bg-amber-50"
   }];
-  return <section className="py-16 bg-gradient-to-b from-white to-campus-gray">
-      <div className="campus-container">
+  return <section className="py-16 bg-gradient-to-b from-white to-campus-gray bg-amber-950">
+      <div className="campus-container bg-yellow-200">
         <h2 className="section-title text-center">Key Features</h2>
         <p className="section-subtitle text-center">
           Discover innovative tools and resources designed to enhance the educational experience

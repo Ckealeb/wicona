@@ -54,7 +54,7 @@ const NewsEvents = () => {
     location: "Online Portal",
     link: "/events/summer-camp"
   }];
-  return <section className="py-16 bg-campus-gray">
+  return <section className="py-16 bg-yellow-200">
       <div className="campus-container">
         <h2 className="section-title text-center">Stay Connected</h2>
         <p className="section-subtitle text-center">

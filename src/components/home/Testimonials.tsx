@@ -55,8 +55,8 @@ const getInitials = (name: string) => {
   return name.split(" ").map(n => n[0]).join("").toUpperCase();
 };
 const Testimonials = () => {
-  return <section className="bg-campus-light py-16">
-      <div className="campus-container">
+  return <section className="py-16 bg-yellow-500">
+      <div className="campus-container bg-yellow-500">
         <h2 className="section-title mb-8">What People Are Saying</h2>
         <p className="text-center text-lg text-gray-700 mb-10">
           Read what our community shares about their experience with Wits College Namulanda
