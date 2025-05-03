@@ -20,7 +20,7 @@ const Admissions = () => {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-yellow-100">
                 <h3 className="text-xl font-semibold mb-4 text-green-800">Admission Requirements</h3>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start gap-2">
@@ -33,7 +33,7 @@ const Admissions = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Star className="h-5 w-5 mt-1 text-green-600" />
-                    <span>Birth certificate and immunization records</span>
+                    <span>Birth certificate and medical form from a recognized and registered medical institution</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Star className="h-5 w-5 mt-1 text-green-600" />
@@ -43,8 +43,8 @@ const Admissions = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+            <Card className="border-green-100 bg-yellow-100">
+              <CardContent className="pt-6 bg-yellow-100">
                 <h3 className="text-xl font-semibold mb-4 text-green-800">Application Process</h3>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start gap-2">
@@ -61,14 +61,14 @@ const Admissions = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-sm font-semibold text-green-600">4</div>
-                    <span className="text-base">Attend interview (if required)</span>
+                    <span className="text-base">Pick admission letter when prompted by the admissions office</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-green-100 mb-12">
+          <div className="p-8 rounded-lg shadow-sm border border-green-100 mb-12 bg-amber-200">
             <h3 className="text-2xl font-semibold mb-6 text-green-800">Key Dates</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="space-y-2">
