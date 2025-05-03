@@ -1,14 +1,11 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Book, Award, Star } from "lucide-react";
-
 const Admissions = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
@@ -64,7 +61,7 @@ const Admissions = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-sm font-semibold text-green-600">4</div>
-                    <span>Attend interview (if required)</span>
+                    <span className="text-base">Attend interview (if required)</span>
                   </li>
                 </ul>
               </CardContent>
@@ -97,8 +94,6 @@ const Admissions = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Admissions;
