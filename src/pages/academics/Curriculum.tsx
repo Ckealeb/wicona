@@ -81,25 +81,25 @@ const Curriculum = () => {
             </TabsContent>
             
             <TabsContent value="alevel" className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="p-6 rounded-lg shadow-sm bg-lime-100">
                 <h2 className="text-xl font-semibold mb-4 text-lime-800">A-Level Curriculum (S5-S6)</h2>
                 <p className="text-gray-700 mb-4">
                   The A-Level curriculum spans two years (Senior 5 to Senior 6) and culminates in the Uganda Advanced Certificate of Education (UACE) examinations.
                   Students select a combination of three principal subjects plus General Paper.
                 </p>
                 
-                <h3 className="text-lg font-semibold mb-2 text-lime-700">Science Combinations:</h3>
+                <h3 className="text-lg font-semibold mb-2 text-lime-700">Science Subjects:</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
-                  <li>PCM: Physics, Chemistry, Mathematics</li>
-                  <li>PCB: Physics, Chemistry, Biology</li>
-                  <li>BCM: Biology, Chemistry, Mathematics</li>
+                  <li>Physics</li>
+                  <li> Chemistry</li>
+                  <li>Biology</li>
                 </ul>
                 
-                <h3 className="text-lg font-semibold mb-2 text-lime-700">Arts Combinations:</h3>
+                <h3 className="text-lg font-semibold mb-2 text-lime-700">Arts Subjects:</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
-                  <li>HEG: History, Economics, Geography</li>
-                  <li>HEL: History, Economics, Literature</li>
-                  <li>MEG: Mathematics, Economics, Geography</li>
+                  <li>History</li>
+                  <li>Economics</li>
+                  <li>Geography</li>
                 </ul>
                 
                 <h3 className="text-lg font-semibold mb-2 text-lime-700">Compulsory Subject:</h3>
@@ -137,7 +137,9 @@ const Curriculum = () => {
                   <li>Computer Studies</li>
                   <li>Agriculture</li>
                   <li>Fine Art</li>
-                  <li>Entrepreneurship Education
+                  <li>Entrepreneurship Education 
+
+
 Technical Drawing</li>
                 </ul>
               </CardContent>
