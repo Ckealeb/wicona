@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 interface NavLink {
   title: string;
@@ -34,6 +34,10 @@ const navLinks: NavLink[] = [
       {
         title: "Media Gallery",
         path: "/about/gallery"
+      },
+      {
+        title: "Student Life",
+        path: "/student-life"
       }
     ]
   },
@@ -52,16 +56,16 @@ const navLinks: NavLink[] = [
       {
         title: "Homework & Exams",
         path: "/academics/homework-exams"
+      },
+      {
+        title: "Calendar",
+        path: "/calendar"
       }
     ]
   },
   {
     title: "Admissions",
     path: "/admissions"
-  },
-  {
-    title: "Student Life",
-    path: "/student-life"
   },
   {
     title: "Contact",
@@ -100,15 +104,19 @@ const Navigation = () => {
         <div className="hidden lg:flex items-center space-x-8 bg-lime-400">
           {navLinks.map(link => (
             <div key={link.title} className="relative group">
-              <div className="flex items-center space-x-1 cursor-pointer" onClick={() => link.children && toggleDropdown(link.title)}>
-                <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors">
+              <div className="flex items-center space-x-1 cursor-pointer">
+                <Link 
+                  to={link.path} 
+                  className="text-gray-700 hover:text-campus-blue transition-colors"
+                  onClick={() => link.children && toggleDropdown(link.title)}
+                >
                   {link.title}
                 </Link>
-                {link.children && <ChevronDown size={16} className="text-gray-500" />}
+                {link.children && <ChevronDown size={16} className="text-gray-500 transition-transform group-hover:rotate-180" />}
               </div>
               
               {link.children && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="py-1">
                     {link.children.map(childLink => (
                       <Link 
@@ -126,12 +134,9 @@ const Navigation = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center space-x-4">
-          <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors">
+        <div className="hidden lg:flex items-center">
+          <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors hover:scale-105 transform duration-200">
             Portal Login
-          </Link>
-          <Link to="/calendar" className="text-campus-primary hover:text-campus-secondary transition-colors">
-            Calendar
           </Link>
         </div>
 
@@ -184,9 +189,6 @@ const Navigation = () => {
             <div className="pt-4 space-y-4 border-t border-gray-200">
               <Link to="/portal" className="block btn-secondary text-center p-2 hover:bg-lime-100 rounded-md transition-colors">
                 Portal Login
-              </Link>
-              <Link to="/calendar" className="block text-center text-campus-primary p-2 hover:bg-lime-100 rounded-md transition-colors">
-                Calendar
               </Link>
             </div>
           </div>

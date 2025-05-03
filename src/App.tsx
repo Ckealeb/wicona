@@ -18,6 +18,7 @@ import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Calendar from "./pages/academics/Calendar";
 
 // Scroll restoration component
 function ScrollToTop() {
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/student-life" element={<StudentLife />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
