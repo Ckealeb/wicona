@@ -21,14 +21,14 @@ const Curriculum = () => {
           </div>
 
           <Tabs defaultValue="overview" className="mb-12">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-lime-400">
               <TabsTrigger value="overview">Curriculum Overview</TabsTrigger>
               <TabsTrigger value="olevel">O-Level (S1-S4)</TabsTrigger>
               <TabsTrigger value="alevel">A-Level (S5-S6)</TabsTrigger>
             </TabsList>
             
             <TabsContent value="overview" className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="p-6 rounded-lg shadow-sm bg-lime-100">
                 <h2 className="text-xl font-semibold mb-4 text-lime-800">Uganda National Curriculum</h2>
                 <p className="text-gray-700 mb-4">
                   Our school follows the curriculum as prescribed by Uganda's National Curriculum Development Centre (NCDC),
@@ -49,7 +49,7 @@ const Curriculum = () => {
             </TabsContent>
             
             <TabsContent value="olevel" className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="p-6 rounded-lg shadow-sm bg-lime-100">
                 <h2 className="text-xl font-semibold mb-4 text-lime-800">O-Level Curriculum (S1-S4)</h2>
                 <p className="text-gray-700 mb-4">
                   The O-Level curriculum spans four years (Senior 1 to Senior 4) and culminates in the Uganda Certificate of Education (UCE) examinations.
@@ -72,7 +72,7 @@ const Curriculum = () => {
                   <li>Agriculture</li>
                   <li>Computer Studies</li>
                   <li>Fine Art</li>
-                  <li>Music</li>
+                  <li>Technology and design</li>
                   <li>Kiswahili</li>
                   <li>French</li>
                   <li>Entrepreneurship</li>
@@ -113,7 +113,7 @@ const Curriculum = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="bg-white">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-lime-100">
                 <div className="text-green-600 mb-4">
                   <BookOpen className="h-8 w-8" />
                 </div>
@@ -122,12 +122,12 @@ const Curriculum = () => {
                   <li>Mathematics</li>
                   <li>English Language</li>
                   <li>Sciences (Biology, Physics, Chemistry)</li>
-                  <li className="bg-gray-50">Social Studies (History, Geography)</li>
+                  <li className="bg-lime-100">Humanities (History, Geography)</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-lime-100">
               <CardContent className="pt-6">
                 <div className="text-green-600 mb-4">
                   <GraduationCap className="h-8 w-8" />
@@ -137,12 +137,13 @@ const Curriculum = () => {
                   <li>Computer Studies</li>
                   <li>Agriculture</li>
                   <li>Fine Art</li>
-                  <li>Entrepreneurship Education</li>
+                  <li>Entrepreneurship Education
+Technical Drawing</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-lime-100">
               <CardContent className="pt-6">
                 <div className="text-green-600 mb-4">
                   <Award className="h-8 w-8" />
@@ -150,7 +151,7 @@ const Curriculum = () => {
                 <h3 className="text-xl font-semibold mb-2">Values Education</h3>
                 <ul className="text-gray-600 space-y-2">
                   <li>Religious Education</li>
-                  <li>Citizenship</li>
+                  <li>Patriotisim</li>
                   <li>Life Skills</li>
                   <li>Physical Education</li>
                 </ul>
@@ -158,7 +159,7 @@ const Curriculum = () => {
             </Card>
           </div>
 
-          <div className="mb-12 bg-white p-6 rounded-lg shadow-sm">
+          <div className="mb-12 p-6 rounded-lg shadow-sm bg-lime-100">
             <h2 className="text-xl font-semibold mb-6 text-lime-800 flex items-center">
               <Bookmark className="mr-2" /> Assessment Framework
             </h2>
@@ -176,37 +177,37 @@ const Curriculum = () => {
 
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>Senior 1 (S1) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-400 hover:bg-amber-300">Senior 1 (S1) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">Mathematics, English, Kiswahili, Integrated Science, Social Studies, Religious Education, Agriculture, Physical Education, Art and Craft</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>Senior 2 (S2) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-400 hover:bg-amber-300">Senior 2 (S2) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">Mathematics, English, Kiswahili, Biology, Chemistry, Physics, Geography, History, Religious Education, Agriculture, Computer Studies</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>Senior 3 (S3) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-400 hover:bg-amber-300">Senior 3 (S3) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">Mathematics, English, Biology, Chemistry, Physics, Geography, History, Religious Education, plus electives (Computer Studies, Fine Art, Agriculture, Entrepreneurship)</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-              <AccordionTrigger>Senior 4 (S4) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-400 hover:bg-amber-300">Senior 4 (S4) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">UCE examination preparation: Mathematics, English, Sciences, Humanities, plus chosen electives. Focus on revision and past papers.</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
-              <AccordionTrigger>Senior 5 (S5) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-600 hover:bg-amber-500 text-zinc-50">Senior 5 (S5) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">Three principal subjects (science or arts combination), General Paper, and Subsidiary ICT/Computer Studies.</p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-6">
-              <AccordionTrigger>Senior 6 (S6) Subjects</AccordionTrigger>
+              <AccordionTrigger className="bg-amber-600 hover:bg-amber-500 text-zinc-50">Senior 6 (S6) Subjects</AccordionTrigger>
               <AccordionContent>
                 <p className="text-gray-600">Continuation of A-Level subjects with UACE examination preparation, specialized research projects, and career guidance.</p>
               </AccordionContent>
