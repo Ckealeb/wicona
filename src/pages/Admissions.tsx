@@ -1,10 +1,22 @@
-import React from "react";
+
+import React, { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Book, Award, Star } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import ApplicationForm from "@/components/admissions/ApplicationForm";
+
 const Admissions = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
@@ -87,13 +99,29 @@ const Admissions = () => {
           </div>
 
           <div className="text-center">
-            <Button className="bg-green-600 hover:bg-green-700">
+            <Button 
+              className="bg-green-600 hover:bg-green-700"
+              onClick={() => setIsDialogOpen(true)}
+            >
               Start Your Application
             </Button>
           </div>
         </div>
       </main>
       <Footer />
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-green-800">Online Application Form</DialogTitle>
+            <DialogDescription>
+              Please complete all the required fields in the application form. Fields marked with an asterisk (*) are mandatory.
+            </DialogDescription>
+          </DialogHeader>
+          <ApplicationForm onSubmit={() => setIsDialogOpen(false)} />
+        </DialogContent>
+      </Dialog>
     </div>;
 };
+
 export default Admissions;

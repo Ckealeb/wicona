@@ -206,33 +206,35 @@ const SchoolCalendar = () => {
                         termDate: (date) => getDayClassNames(date).includes('bg-blue'),
                         schoolDay: (date) => getDayClassNames(date).includes('bg-green')
                       }}
-                      modifiersClassNames={{
-                        holiday: "bg-red-100 text-red-900 hover:bg-red-200",
-                        event: "bg-amber-100 text-amber-900 hover:bg-amber-200",
-                        termDate: "bg-blue-100 text-blue-900 hover:bg-blue-200",
-                        schoolDay: "bg-green-100 text-green-900 hover:bg-green-200"
+                      modifiersStyles={{
+                        holiday: { backgroundColor: "#FEE2E2", color: "#991B1B", fontWeight: 500 },
+                        event: { backgroundColor: "#FEF3C7", color: "#92400E", fontWeight: 500 },
+                        termDate: { backgroundColor: "#DBEAFE", color: "#1E40AF", fontWeight: 500 },
+                        schoolDay: { backgroundColor: "#D1FAE5", color: "#065F46", fontWeight: 500 }
                       }}
                       styles={{
-                        day: { margin: '2px' }
+                        day: { margin: '2px', borderRadius: '4px' }
                       }}
                     />
                     <div className="flex flex-col gap-2 mt-4 p-3 bg-gray-50 rounded-md">
                       <h4 className="font-medium text-gray-700 mb-2">Legend</h4>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        <span className="text-sm">School Days</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                        <span className="text-sm">Holidays</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-                        <span className="text-sm">Special Events</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                        <span className="text-sm">Term Start/End</span>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                          <span className="text-sm">School Days</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                          <span className="text-sm">Holidays</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                          <span className="text-sm">Special Events</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                          <span className="text-sm">Term Start/End</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -241,53 +243,82 @@ const SchoolCalendar = () => {
             </div>
             
             <div className="col-span-1 lg:col-span-2">
-              <Card className="bg-white h-full">
-                <CardHeader>
-                  <CardTitle className="text-campus-primary">
-                    {date ? format(date, 'MMMM d, yyyy') : 'Select a date'}
-                  </CardTitle>
-                  <CardDescription>
-                    {selectedDateEvents.length > 0 
-                      ? `${selectedDateEvents.length} event(s) on this date` 
-                      : 'No events on this date'}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {selectedDateEvents.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="bg-white h-full">
+                  <CardHeader>
+                    <CardTitle className="text-campus-primary">
+                      {date ? format(date, 'MMMM d, yyyy') : 'Select a date'}
+                    </CardTitle>
+                    <CardDescription>
+                      {selectedDateEvents.length > 0 
+                        ? `${selectedDateEvents.length} event(s) on this date` 
+                        : 'No events on this date'}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    {selectedDateEvents.length > 0 ? (
+                      <div className="space-y-4">
+                        {selectedDateEvents.map((event, index) => (
+                          <div 
+                            key={index} 
+                            className={`p-4 rounded-md flex items-start gap-3 ${
+                              event.type === 'holiday' ? 'bg-red-50 border-l-4 border-red-500' : 
+                              event.type === 'event' ? 'bg-amber-50 border-l-4 border-amber-500' :
+                              'bg-blue-50 border-l-4 border-blue-500'
+                            }`}
+                          >
+                            {event.type === 'holiday' ? (
+                              <CalendarClock className="h-5 w-5 text-red-500" />
+                            ) : event.type === 'event' ? (
+                              <CalendarCheck className="h-5 w-5 text-amber-500" />
+                            ) : (
+                              <BookOpen className="h-5 w-5 text-blue-500" />
+                            )}
+                            <div>
+                              <h3 className="font-medium">{event.name}</h3>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="py-8 text-center">
+                        <Info className="mx-auto h-12 w-12 text-gray-300" />
+                        <h3 className="mt-2 text-gray-500">No events scheduled for this date</h3>
+                        <p className="text-sm text-gray-400">Select another date or check term schedules below</p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white h-full">
+                  <CardHeader>
+                    <CardTitle className="text-campus-primary">Term Information</CardTitle>
+                    <CardDescription>
+                      Active terms and upcoming terms
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
                     <div className="space-y-4">
-                      {selectedDateEvents.map((event, index) => (
-                        <div 
-                          key={index} 
-                          className={`p-4 rounded-md flex items-start gap-3 ${
-                            event.type === 'holiday' ? 'bg-red-50 border-l-4 border-red-500' : 
-                            event.type === 'event' ? 'bg-amber-50 border-l-4 border-amber-500' :
-                            'bg-blue-50 border-l-4 border-blue-500'
-                          }`}
-                        >
-                          {event.type === 'holiday' ? (
-                            <CalendarClock className="h-5 w-5 text-red-500" />
-                          ) : event.type === 'event' ? (
-                            <CalendarCheck className="h-5 w-5 text-amber-500" />
-                          ) : (
-                            <BookOpen className="h-5 w-5 text-blue-500" />
-                          )}
-                          <div>
-                            <h3 className="font-medium">{event.name}</h3>
+                      {schoolTerms[selectedYear as keyof typeof schoolTerms]?.map((term, index) => (
+                        <div key={index} className="border-l-4 border-green-500 pl-4 py-2">
+                          <h3 className="font-semibold text-green-800">{term.term}</h3>
+                          <p className="text-sm text-gray-600">{term.startDate} - {term.endDate}</p>
+                          <div className="mt-2 flex gap-2">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                              {term.events.length} Events
+                            </span>
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                              {term.holidays.length} Holidays
+                            </span>
                           </div>
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <div className="py-8 text-center">
-                      <Info className="mx-auto h-12 w-12 text-gray-300" />
-                      <h3 className="mt-2 text-gray-500">No events scheduled for this date</h3>
-                      <p className="text-sm text-gray-400">Select another date or check term schedules below</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
               
-              {/* Term Schedules - Moved before Important Notice */}
+              {/* Term Schedules - Now moved before Important Notice */}
               <div className="mt-8">
                 <h2 className="text-xl font-semibold mb-4">Term Schedules ({selectedYear})</h2>
                 <Tabs defaultValue="term1">
@@ -348,7 +379,7 @@ const SchoolCalendar = () => {
                 </Tabs>
               </div>
               
-              {/* Important Notice - Now after Term Schedules */}
+              {/* Important Notice - Now moved after Term Schedules */}
               <Card className="mt-8 bg-lime-100">
                 <CardHeader>
                   <CardTitle className="text-campus-primary">Important Notice</CardTitle>
