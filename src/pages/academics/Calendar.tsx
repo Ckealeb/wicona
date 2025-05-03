@@ -123,6 +123,43 @@ const SchoolCalendar = () => {
   // Get the selected events
   const selectedDateEvents = getEventsForSelectedDate();
 
+  // Function to get date class for highlighting based on type
+  const getDayClassNames = (date: Date | undefined): string => {
+    if (!date) return "";
+    
+    const dateString = format(date, "MMMM d, yyyy");
+    let className = "";
+    
+    for (const term of schoolTerms[selectedYear as keyof typeof schoolTerms] || []) {
+      // Check if it's a holiday
+      for (const holiday of term.holidays) {
+        if (holiday.date.includes(dateString) || dateString === holiday.date) {
+          return "bg-red-100 text-red-900 hover:bg-red-200";
+        }
+      }
+      
+      // Check if it's a special event
+      for (const event of term.events) {
+        if (event.date.includes(dateString) || dateString === event.date) {
+          return "bg-amber-100 text-amber-900 hover:bg-amber-200";
+        }
+      }
+      
+      // Check if it's term start/end
+      if (dateString === term.startDate || dateString === term.endDate) {
+        return "bg-blue-100 text-blue-900 hover:bg-blue-200";
+      }
+    }
+    
+    // Regular school days (weekdays that aren't holidays or events)
+    const day = date.getDay();
+    if (day !== 0 && day !== 6) {
+      return "bg-green-100 text-green-900 hover:bg-green-200";
+    }
+    
+    return className;
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -139,8 +176,8 @@ const SchoolCalendar = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="col-span-1">
-              <Card className="bg-white h-full">
-                <CardHeader>
+              <Card className="bg-white h-full border-4 border-purple-200 shadow-md">
+                <CardHeader className="bg-purple-50">
                   <CardTitle className="text-campus-primary">Select Date</CardTitle>
                   <CardDescription>
                     Browse the calendar to view school events
@@ -152,7 +189,7 @@ const SchoolCalendar = () => {
                       <select 
                         value={selectedYear} 
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full p-2 border rounded-md"
+                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-purple-300 focus:border-purple-300"
                       >
                         <option value="2025">2025 Academic Year</option>
                         <option value="2026">2026 Academic Year</option>
@@ -163,8 +200,24 @@ const SchoolCalendar = () => {
                       selected={date}
                       onSelect={setDate}
                       className="rounded-md border bg-white p-3 pointer-events-auto"
+                      modifiers={{
+                        holiday: (date) => getDayClassNames(date).includes('bg-red'),
+                        event: (date) => getDayClassNames(date).includes('bg-amber'),
+                        termDate: (date) => getDayClassNames(date).includes('bg-blue'),
+                        schoolDay: (date) => getDayClassNames(date).includes('bg-green')
+                      }}
+                      modifiersClassNames={{
+                        holiday: "bg-red-100 text-red-900 hover:bg-red-200",
+                        event: "bg-amber-100 text-amber-900 hover:bg-amber-200",
+                        termDate: "bg-blue-100 text-blue-900 hover:bg-blue-200",
+                        schoolDay: "bg-green-100 text-green-900 hover:bg-green-200"
+                      }}
+                      styles={{
+                        day: { margin: '2px' }
+                      }}
                     />
-                    <div className="flex flex-col gap-2 mt-4">
+                    <div className="flex flex-col gap-2 mt-4 p-3 bg-gray-50 rounded-md">
+                      <h4 className="font-medium text-gray-700 mb-2">Legend</h4>
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         <span className="text-sm">School Days</span>
@@ -234,6 +287,7 @@ const SchoolCalendar = () => {
                 </CardContent>
               </Card>
               
+              {/* Term Schedules - Moved before Important Notice */}
               <div className="mt-8">
                 <h2 className="text-xl font-semibold mb-4">Term Schedules ({selectedYear})</h2>
                 <Tabs defaultValue="term1">
@@ -293,25 +347,26 @@ const SchoolCalendar = () => {
                   ))}
                 </Tabs>
               </div>
+              
+              {/* Important Notice - Now after Term Schedules */}
+              <Card className="mt-8 bg-lime-100">
+                <CardHeader>
+                  <CardTitle className="text-campus-primary">Important Notice</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    The school calendar is subject to change due to government directives or unforeseen circumstances. 
+                    Parents and students will be notified of any changes via official school communication channels.
+                  </p>
+                  <p className="text-gray-700 mt-4">
+                    For any questions regarding the academic calendar, please contact the school administration 
+                    office at <span className="font-semibold text-campus-primary">admin@wittscollegenamulanda.ac.ug</span> or 
+                    call <span className="font-semibold text-campus-primary">+256 (0) 414 123456</span>.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
-          
-          <Card className="mt-8 bg-lime-100">
-            <CardHeader>
-              <CardTitle className="text-campus-primary">Important Notice</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700">
-                The school calendar is subject to change due to government directives or unforeseen circumstances. 
-                Parents and students will be notified of any changes via official school communication channels.
-              </p>
-              <p className="text-gray-700 mt-4">
-                For any questions regarding the academic calendar, please contact the school administration 
-                office at <span className="font-semibold text-campus-primary">admin@wittscollegenamulanda.ac.ug</span> or 
-                call <span className="font-semibold text-campus-primary">+256 (0) 414 123456</span>.
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </main>
       <Footer />
