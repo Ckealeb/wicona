@@ -12,11 +12,7 @@ const StudentLife = () => {
           <h1 className="section-title">Student Life</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700">
-              At Witts College Namulada, we believe in nurturing well-rounded individuals through a 
-              rich blend of academic and extra-curricular activities. Our vibrant campus life offers 
-              numerous opportunities for personal growth and development.
-            </p>
+            <p className="text-lg text-gray-700">At Wits College Namulada, we believe in nurturing well-rounded individuals through a rich blend of academic and extra-curricular activities. Our vibrant campus life offers numerous opportunities for personal growth and development.</p>
           </div>
 
           <Tabs defaultValue="activities" className="mb-12">
@@ -46,7 +42,7 @@ const StudentLife = () => {
                     <ul className="space-y-2 text-gray-600">
                       <li>Science Fair</li>
                       <li>Debate Competitions</li>
-                      <li>Math Olympiad</li>
+                      <li>Math contest</li>
                       <li>Literary Week</li>
                     </ul>
                   </CardContent>
@@ -61,7 +57,7 @@ const StudentLife = () => {
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Academic Clubs</h3>
                     <ul className="space-y-2 text-gray-600">
                       <li>Science Club</li>
-                      <li>Literature Club</li>
+                      <li>Writer's Club</li>
                       <li>Mathematics Club</li>
                       <li>Computer Club</li>
                     </ul>
@@ -72,10 +68,10 @@ const StudentLife = () => {
                   <CardContent className="pt-6 bg-lime-200">
                     <h3 className="text-xl font-semibold mb-4 text-green-800">Social Clubs</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li>Environmental Club</li>
+                      <li>Interact Club</li>
                       <li>Red Cross Club</li>
                       <li>Debate Club</li>
-                      <li>Music Club</li>
+                      <li>Environment Club</li>
                     </ul>
                   </CardContent>
                 </Card>
