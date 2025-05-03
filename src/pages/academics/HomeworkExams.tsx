@@ -202,18 +202,25 @@ const HomeworkExams = () => {
           <h2 className="text-2xl font-semibold mb-6 text-lime-800">Class Assignments</h2>
           
           <div className="mb-8">
-            <TabsList className="w-full flex flex-wrap">
+            <Tabs defaultValue={selectedClass}>
+              <TabsList className="w-full flex flex-wrap">
+                {classLevels.map(level => (
+                  <TabsTrigger 
+                    key={level.id} 
+                    value={level.id}
+                    className={selectedClass === level.id ? "bg-lime-600 text-white" : "bg-lime-50"} 
+                    onClick={() => setSelectedClass(level.id)}
+                  >
+                    {level.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              
+              {/* Hidden TabsContent to satisfy the Tabs component requirement */}
               {classLevels.map(level => (
-                <TabsTrigger 
-                  key={level.id} 
-                  value={level.id}
-                  className={selectedClass === level.id ? "bg-lime-600 text-white" : "bg-lime-50"} 
-                  onClick={() => setSelectedClass(level.id)}
-                >
-                  {level.name}
-                </TabsTrigger>
+                <TabsContent key={level.id} value={level.id} className="hidden"></TabsContent>
               ))}
-            </TabsList>
+            </Tabs>
           </div>
 
           <div className="mb-12 bg-white rounded-lg shadow-sm">
