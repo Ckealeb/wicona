@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -6,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, GraduationCap, Star, Award, Bookmark } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 const Curriculum = () => {
   return <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -76,7 +74,7 @@ const Curriculum = () => {
                   <li>Fine Art</li>
                   <li>Technology and design</li>
                   <li>Kiswahili</li>
-                  <li>French</li>
+                  <li>Litereture</li>
                   <li>Entrepreneurship</li>
                 </ul>
               </div>
