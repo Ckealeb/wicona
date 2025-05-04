@@ -7,11 +7,11 @@ const About = () => {
   return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
-        <div className="campus-container py-16">
+        <div className="campus-container py-16 bg-yellow-200">
           <h1 className="section-title">About Wits College Namulada</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700 mb-8">Founded in 2000, Wits College Namulada has been a beacon of academic excellence in Bungoma County, Kenya. Our institution is committed to nurturing well-rounded individuals through a blend of rigorous academics, character development, and practical skills training.</p>
+            <p className="text-lg text-gray-700 mb-8">Founded in 2000, Wits College Namulada has been a beacon of academic excellence in Wakiso District, Uganda. Our institution is committed to nurturing well-rounded individuals through a blend of rigorous academics, character development, and practical skills training.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -36,7 +36,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-lime-50">
                 <div className="text-green-600 mb-4">
                   <Users className="h-8 w-8" />
                 </div>
@@ -46,7 +46,7 @@ const About = () => {
             </Card>
 
             <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-lime-50">
                 <div className="text-green-600 mb-4">
                   <GraduationCap className="h-8 w-8" />
                 </div>
@@ -56,7 +56,7 @@ const About = () => {
             </Card>
 
             <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-lime-50">
                 <div className="text-green-600 mb-4">
                   <Building className="h-8 w-8" />
                 </div>
@@ -66,7 +66,7 @@ const About = () => {
             </Card>
 
             <Card className="bg-white border-green-100">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-lime-50">
                 <div className="text-green-600 mb-4">
                   <Award className="h-8 w-8" />
                 </div>
