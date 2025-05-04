@@ -106,8 +106,8 @@ const Curriculum = () => {
                   <li><strong>PCM:</strong> Physics, Chemistry, Mathematics</li>
                   <li><strong>PCB:</strong> Physics, Chemistry, Biology</li>
                   <li><strong>BCM:</strong> Biology, Chemistry, Mathematics</li>
-                  <li><strong>PCA:</strong> Physics, Chemistry, Agriculture</li>
-                  <li><strong>MEC:</strong> Mathematics, Economics, Computer Science</li>
+                  <li><strong>PMTD:</strong> Physics, Mathematics, Technical Drawing</li>
+                  <li><strong>BAM:</strong> Biology, Agriculture, Mathematics</li>
                 </ul>
                 
                 <h3 className="text-lg font-semibold mb-2 text-lime-700">Arts Subjects:</h3>
