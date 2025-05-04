@@ -1,13 +1,10 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Shield, Star, School, Award } from "lucide-react";
-
 const Leadership = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow">
         {/* Page Header */}
@@ -33,8 +30,8 @@ const Leadership = () => {
             {/* Leadership Cards */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <Card className="bg-white hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-center">
+                <CardContent className="pt-6 bg-amber-600">
+                  <div className="text-center bg-gray-50">
                     <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
                       <User className="w-16 h-16 text-green-600" />
                     </div>
@@ -48,8 +45,8 @@ const Leadership = () => {
               </Card>
 
               <Card className="bg-white hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-center">
+                <CardContent className="pt-6 bg-amber-300">
+                  <div className="text-center bg-gray-50">
                     <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
                       <Shield className="w-16 h-16 text-green-600" />
                     </div>
@@ -63,8 +60,8 @@ const Leadership = () => {
               </Card>
 
               <Card className="bg-white hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-center">
+                <CardContent className="pt-6 bg-amber-300">
+                  <div className="text-center bg-gray-50">
                     <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
                       <Star className="w-16 h-16 text-green-600" />
                     </div>
@@ -78,8 +75,8 @@ const Leadership = () => {
               </Card>
 
               <Card className="bg-white hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="text-center">
+                <CardContent className="pt-6 bg-amber-300">
+                  <div className="text-center bg-gray-50">
                     <div className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
                       <Award className="w-16 h-16 text-green-600" />
                     </div>
@@ -103,7 +100,7 @@ const Leadership = () => {
             </div>
 
             <div className="max-w-5xl mx-auto">
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center bg-amber-100">
                 {/* Board of Directors */}
                 <div className="p-4 bg-lime-100 rounded-lg shadow-md border border-lime-300 mb-8 w-72 text-center hover:bg-lime-200 transition-colors">
                   <h3 className="font-bold text-lime-800">BOARD OF DIRECTORS / PROPRIETOR</h3>
@@ -240,8 +237,6 @@ const Leadership = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Leadership;
