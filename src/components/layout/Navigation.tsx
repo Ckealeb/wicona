@@ -103,7 +103,7 @@ const Navigation = () => {
         </div>
 
         <button className="lg:hidden text-campus-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} className="bg-amber-100" /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={24} className="bg-amber-200" /> : <Menu size={24} />}
         </button>
       </nav>
 
