@@ -1,12 +1,24 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
 interface NavLink {
   title: string;
   path: string;
   children?: NavLink[];
 }
+
 const navLinks: NavLink[] = [{
   title: "Home",
   path: "/"
@@ -52,12 +64,16 @@ const navLinks: NavLink[] = [{
   title: "Contact",
   path: "/contact"
 }];
+
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const isMobile = useIsMobile();
+  
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
   };
+  
   return <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
         <p className="text-sm font-medium">
@@ -102,9 +118,14 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <button className="lg:hidden text-campus-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} className="bg-amber-200" /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center space-x-3">
+          <Link to="/portal" className="bg-campus-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campus-dark transition-colors text-sm">
+            Portal Login
+          </Link>
+          <button className="text-campus-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={24} className="bg-amber-200" /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {mobileMenuOpen && <div className="lg:hidden bg-white shadow-lg fixed right-0 top-[104px] h-screen w-1/4 overflow-y-auto">
@@ -123,14 +144,9 @@ const Navigation = () => {
                       </Link>)}
                   </div>}
               </div>)}
-
-            <div className="pt-4 space-y-4 border-t border-gray-200">
-              <Link to="/portal" className="block btn-secondary text-center p-2 hover:bg-lime-100 rounded-md transition-colors">
-                Portal Login
-              </Link>
-            </div>
           </div>
         </div>}
     </header>;
 };
+
 export default Navigation;
