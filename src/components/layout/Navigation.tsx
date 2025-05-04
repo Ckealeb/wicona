@@ -77,8 +77,8 @@ const Navigation = () => {
   return <header className="sticky top-0 z-50 bg-campus-light shadow-sm">
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2">
         <p className="text-sm font-medium">
-          Registration open for 2025-2026 academic year! 
-          <a href="/admissions" className="underline font-bold ml-1">Apply now</a>
+          Registration open for 2025 academic year! 
+          <Link to="/admissions" className="underline font-bold ml-1">Apply now</Link>
         </p>
       </div>
       
