@@ -1,14 +1,11 @@
-
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Laptop, BookOpen, Video, FileText } from "lucide-react";
-
 const ELearning = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
@@ -23,7 +20,7 @@ const ELearning = () => {
           </div>
 
           <Tabs defaultValue="features" className="mb-12">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-lime-400">
               <TabsTrigger value="features">Platform Features</TabsTrigger>
               <TabsTrigger value="resources">Digital Resources</TabsTrigger>
               <TabsTrigger value="access">How to Access</TabsTrigger>
@@ -32,7 +29,7 @@ const ELearning = () => {
             <TabsContent value="features" className="space-y-6">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Card className="bg-white">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-amber-100">
                     <div className="text-green-600 mb-4">
                       <Laptop className="h-8 w-8" />
                     </div>
@@ -42,7 +39,7 @@ const ELearning = () => {
                 </Card>
 
                 <Card className="bg-white">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-amber-100">
                     <div className="text-green-600 mb-4">
                       <FileText className="h-8 w-8" />
                     </div>
@@ -52,7 +49,7 @@ const ELearning = () => {
                 </Card>
 
                 <Card className="bg-white">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-amber-100">
                     <div className="text-green-600 mb-4">
                       <Video className="h-8 w-8" />
                     </div>
@@ -65,7 +62,7 @@ const ELearning = () => {
             
             <TabsContent value="resources" className="space-y-6">
               <Card>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6 bg-amber-100">
                   <h3 className="text-xl font-semibold mb-4 text-green-800">Available Digital Resources</h3>
                   <ul className="list-disc pl-5 text-gray-600 space-y-2">
                     <li>E-books and digital textbooks</li>
@@ -80,10 +77,10 @@ const ELearning = () => {
             
             <TabsContent value="access" className="space-y-6">
               <Card>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6 bg-yellow-100">
                   <h3 className="text-xl font-semibold mb-4 text-green-800">Accessing the E-Learning Platform</h3>
                   <ol className="list-decimal pl-5 text-gray-600 space-y-2">
-                    <li>Log in using your student credentials at elearning.wittscollege.ac.ke</li>
+                    <li>Log in using your student credentials at elearning.wittscollege.ac.ug</li>
                     <li>Navigate to your enrolled courses dashboard</li>
                     <li>Click on any course to access its materials</li>
                     <li>Download resources for offline use if needed</li>
@@ -94,18 +91,16 @@ const ELearning = () => {
             </TabsContent>
           </Tabs>
 
-          <div className="bg-green-700 text-white p-8 rounded-lg">
+          <div className="text-white p-8 rounded-lg bg-amber-500">
             <h2 className="text-2xl font-bold mb-4">Ready to experience digital learning?</h2>
             <p className="mb-6">Our E-Learning platform is available to all enrolled students and staff members.</p>
-            <button className="bg-white text-green-700 px-6 py-2 rounded-md font-medium hover:bg-green-50 transition-colors">
+            <button className="px-6 py-2 rounded-md font-medium transition-colors bg-indigo-900 hover:bg-indigo-800 text-zinc-50">
               Log in to E-Learning Portal
             </button>
           </div>
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ELearning;
