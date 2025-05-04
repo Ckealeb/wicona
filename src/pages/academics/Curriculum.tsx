@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -5,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, GraduationCap, Star, Award, Bookmark } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const Curriculum = () => {
   return <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -93,6 +95,19 @@ const Curriculum = () => {
                   <li>Physics</li>
                   <li>Chemistry</li>
                   <li>Biology</li>
+                  <li>Mathematics</li>
+                  <li>Computer Science</li>
+                  <li>Agriculture</li>
+                  <li>Technical Drawing</li>
+                </ul>
+
+                <h4 className="text-md font-semibold mb-2 text-lime-600">Popular Science Combinations:</h4>
+                <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
+                  <li><strong>PCM:</strong> Physics, Chemistry, Mathematics</li>
+                  <li><strong>PCB:</strong> Physics, Chemistry, Biology</li>
+                  <li><strong>BCM:</strong> Biology, Chemistry, Mathematics</li>
+                  <li><strong>PCA:</strong> Physics, Chemistry, Agriculture</li>
+                  <li><strong>MEC:</strong> Mathematics, Economics, Computer Science</li>
                 </ul>
                 
                 <h3 className="text-lg font-semibold mb-2 text-lime-700">Arts Subjects:</h3>
@@ -100,13 +115,33 @@ const Curriculum = () => {
                   <li>History</li>
                   <li>Economics</li>
                   <li>Geography</li>
+                  <li>Literature in English</li>
+                  <li>Divinity (CRE)</li>
+                  <li>Islamic Religious Education (IRE)</li>
+                  <li>Art & Design</li>
+                  <li>Entrepreneurship</li>
+                  <li>Kiswahili</li>
+                </ul>
+
+                <h4 className="text-md font-semibold mb-2 text-lime-600">Popular Arts Combinations:</h4>
+                <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
+                  <li><strong>HEG:</strong> History, Economics, Geography</li>
+                  <li><strong>DEG:</strong> Divinity, Economics, Geography</li>
+                  <li><strong>HEL:</strong> History, Economics, Literature</li>
+                  <li><strong>GEA:</strong> Geography, Economics, Art</li>
+                  <li><strong>HGK:</strong> History, Geography, Kiswahili</li>
                 </ul>
                 
-                <h3 className="text-lg font-semibold mb-2 text-lime-700">Compulsory Subject:</h3>
+                <h3 className="text-lg font-semibold mb-2 text-lime-700">Compulsory Subjects:</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-1 mb-4">
                   <li>General Paper</li>
                   <li>Computer Studies (Subsidiary)/ Subsidiary Math</li>
                 </ul>
+
+                <p className="text-gray-700 mt-4 border-t pt-4 border-lime-300">
+                  <strong>Note:</strong> Our school offers career guidance to help students select appropriate subject combinations
+                  aligned with their career aspirations, abilities, and interests. Contact our academic counselors for personalized advice.
+                </p>
               </div>
             </TabsContent>
           </Tabs>
@@ -137,10 +172,8 @@ const Curriculum = () => {
                   <li>Computer Studies</li>
                   <li>Agriculture</li>
                   <li>Fine Art</li>
-                  <li>Entrepreneurship Education 
-
-
-Technical Drawing</li>
+                  <li>Entrepreneurship Education</li>
+                  <li>Technical Drawing</li>
                 </ul>
               </CardContent>
             </Card>
