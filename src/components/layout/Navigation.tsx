@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Moon, Sun } from "lucide-react";
@@ -136,38 +136,13 @@ const Navigation = () => {
             </Link>
           </div>
 
-          <div className="lg:hidden flex items-center space-x-3">
-            <Link to="/portal" className="bg-campus-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campus-dark transition-colors text-sm dark:bg-lime-700 dark:hover:bg-lime-600">
+          <div className="lg:hidden flex items-center">
+            <Link to="/portal" className="bg-campus-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campus-dark transition-colors text-sm dark:bg-lime-700 dark:hover:bg-lime-600 mr-3">
               Portal Login
             </Link>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-campus-blue dark:text-lime-400">
-                  <Menu size={24} />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[50%] dark:bg-gray-900 dark:text-white">
-                <div className="py-4 space-y-4">
-                  {navLinks.map(link => <div key={link.title} className="py-2">
-                      <div 
-                        className="flex items-center justify-between hover:bg-lime-100 dark:hover:bg-gray-800 p-2 rounded-md transition-colors cursor-pointer"
-                        onClick={() => link.children && toggleDropdown(link.title)}
-                      >
-                        <Link to={link.path} className="text-gray-800 font-medium w-full dark:text-gray-200">
-                          {link.title}
-                        </Link>
-                        {link.children && <ChevronDown size={20} className={`transition-transform ${activeDropdown === link.title ? 'rotate-180' : ''} dark:text-gray-400`} />}
-                      </div>
-                      
-                      {link.children && activeDropdown === link.title && <div className="mt-2 ml-4 space-y-2 bg-lime-50 dark:bg-gray-800 rounded-md p-2">
-                          {link.children.map(childLink => <Link key={childLink.title} to={childLink.path} className="block py-1 text-gray-600 hover:text-campus-blue hover:bg-lime-100 dark:text-gray-300 dark:hover:bg-gray-700 p-2 rounded-md transition-colors">
-                              {childLink.title}
-                            </Link>)}
-                        </div>}
-                    </div>)}
-                </div>
-              </SheetContent>
-            </Sheet>
+            <Button variant="ghost" size="icon" className="text-campus-blue dark:text-lime-400">
+              <Menu size={24} />
+            </Button>
           </div>
         </div>
       </nav>
