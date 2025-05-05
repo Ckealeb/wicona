@@ -140,53 +140,19 @@ const Navigation = () => {
             <Link to="/portal" className="bg-campus-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campus-dark transition-colors text-sm dark:bg-lime-700 dark:hover:bg-lime-600 mr-3">
               Portal Login
             </Link>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-campus-blue dark:text-lime-400">
-                  <Menu size={24} />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-full p-0 dark:bg-gray-900 dark:text-white">
-                <div className="p-6 space-y-6 h-full overflow-y-auto">
-                  {navLinks.map(link => (
-                    <div key={link.title} className="py-2">
-                      {link.children ? (
-                        <>
-                          <div 
-                            className="flex items-center justify-between hover:bg-lime-100 dark:hover:bg-gray-800 p-3 rounded-md transition-colors cursor-pointer"
-                            onClick={() => toggleDropdown(link.title)}
-                          >
-                            <span className="text-gray-800 font-medium text-lg dark:text-white">
-                              {link.title}
-                            </span>
-                            <ChevronDown size={20} className={`transition-transform ${activeDropdown === link.title ? 'rotate-180' : ''} dark:text-gray-300`} />
-                          </div>
-                          
-                          <div className={`mt-2 space-y-1 bg-lime-50 dark:bg-gray-800 rounded-md p-2 ${activeDropdown === link.title ? 'block' : 'hidden'}`}>
-                            {link.children.map(childLink => (
-                              <Link 
-                                key={childLink.title} 
-                                to={childLink.path} 
-                                className="block py-2 px-4 text-gray-600 hover:text-campus-blue dark:text-gray-300 dark:hover:text-lime-300 hover:bg-lime-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                              >
-                                {childLink.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      ) : (
-                        <Link 
-                          to={link.path} 
-                          className="block py-3 px-3 text-gray-800 font-medium text-lg hover:bg-lime-100 dark:text-white dark:hover:bg-gray-800 rounded-md transition-colors"
-                        >
-                          {link.title}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-campus-blue dark:text-lime-400"
+              onClick={() => {
+                // Force dark theme on mobile when menu button is clicked
+                if (window.innerWidth < 1024) {
+                  setTheme("dark");
+                }
+              }}
+            >
+              <Menu size={24} />
+            </Button>
           </div>
         </div>
       </nav>

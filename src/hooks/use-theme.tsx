@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
@@ -28,8 +27,28 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => {
+      // Check if on mobile first and default to dark if so
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile) return "dark";
+      
+      // Otherwise use stored preference or default
+      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+    }
   );
+
+  // Listen for screen size changes to apply dark mode on small screens
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile && theme !== "dark") {
+        setTheme("dark");
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [theme]);
 
   useEffect(() => {
     const root = window.document.documentElement;
