@@ -96,7 +96,7 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-8 bg-lime-400 dark:bg-gray-900 transition-colors duration-300">
+        <div className="flex items-center space-x-8 bg-lime-400 dark:bg-gray-900 transition-colors duration-300">
           {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer">
                 <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors dark:text-gray-200 dark:hover:text-lime-300" onClick={() => link.children && toggleDropdown(link.title)}>
@@ -130,29 +130,10 @@ const Navigation = () => {
             )}
           </Toggle>
 
-          <div className="hidden lg:block">
+          <div>
             <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors hover:scale-105 transform duration-200 dark:bg-lime-700 dark:hover:bg-lime-600">
               Portal Login
             </Link>
-          </div>
-
-          <div className="lg:hidden flex items-center">
-            <Link to="/portal" className="bg-campus-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campus-dark transition-colors text-sm dark:bg-lime-700 dark:hover:bg-lime-600 mr-3">
-              Portal Login
-            </Link>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="text-campus-blue dark:text-lime-400"
-              onClick={() => {
-                // Force dark theme on mobile when menu button is clicked
-                if (window.innerWidth < 1024) {
-                  setTheme("dark");
-                }
-              }}
-            >
-              <Menu size={24} />
-            </Button>
           </div>
         </div>
       </nav>
