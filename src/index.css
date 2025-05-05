@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -107,11 +108,11 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-campus-primary mb-6 font-playfair;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-campus-primary mb-6 font-playfair dark:text-lime-400;
   }
   
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto;
+    @apply text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto dark:text-gray-300;
   }
   
   .futuristic-logo {
@@ -129,7 +130,7 @@
   }
 
   .futuristic-text {
-    @apply font-bold text-campus-primary transition-all duration-300;
+    @apply font-bold text-campus-primary transition-all duration-300 dark:text-lime-400;
     text-shadow: 
       0 0 5px theme('colors.campus.glow'),
       0 0 10px theme('colors.campus.accent');
@@ -137,15 +138,15 @@
   }
   
   .btn-primary {
-    @apply bg-campus-blue text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity;
+    @apply bg-campus-blue text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-lime-700 dark:hover:bg-lime-600;
   }
   
   .btn-secondary {
-    @apply bg-campus-teal text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity;
+    @apply bg-campus-teal text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-teal-800;
   }
   
   .btn-accent {
-    @apply bg-campus-amber text-campus-blue px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity;
+    @apply bg-campus-amber text-campus-blue px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-amber-600 dark:text-gray-900;
   }
   
   .card-hover {
@@ -153,6 +154,10 @@
   }
   
   .announcement-bar {
-    @apply bg-campus-amber text-campus-blue py-2 px-4 animate-slide-down;
+    @apply bg-campus-amber text-campus-blue py-2 px-4 animate-slide-down dark:bg-amber-700 dark:text-white;
+  }
+  
+  .card {
+    @apply rounded-lg p-6 bg-white shadow-md dark:bg-gray-800 dark:text-white transition-colors duration-300;
   }
 }
