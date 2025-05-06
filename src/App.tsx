@@ -1,7 +1,9 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/hooks/use-theme";
+import { Routes, Route } from "react-router-dom";
 
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -23,8 +25,6 @@ import ELearning from "@/pages/academics/ELearning";
 import HomeworkExams from "@/pages/academics/HomeworkExams";
 import Calendar from "@/pages/academics/Calendar";
 
-import { ThemeProvider } from "@/hooks/use-theme";
-
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -32,8 +32,8 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <Router>
-      <ThemeProvider defaultTheme="light">
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider defaultTheme="light">
           <div className="flex flex-col min-h-screen">
             <Navigation />
             <main className="flex-grow">
@@ -61,8 +61,8 @@ function App() {
             <Footer />
           </div>
           <Toaster />
-        </QueryClientProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </QueryClientProvider>
     </Router>
   );
 }
