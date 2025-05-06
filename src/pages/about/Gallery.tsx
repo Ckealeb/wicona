@@ -1,13 +1,10 @@
 
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Gallery = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
       <main className="flex-grow bg-green-50">
         <div className="campus-container py-16">
           <h1 className="section-title">Media Gallery</h1>
@@ -53,7 +50,6 @@ const Gallery = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
