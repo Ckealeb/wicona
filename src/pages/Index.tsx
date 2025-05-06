@@ -8,7 +8,7 @@ import NewsEvents from "@/components/home/NewsEvents";
 import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">

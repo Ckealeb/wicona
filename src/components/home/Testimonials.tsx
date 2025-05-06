@@ -2,7 +2,13 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from "@/components/ui/carousel";
 import { MessageCircle, MessageSquare } from "lucide-react";
 
 interface TestimonialProps {
@@ -20,22 +26,26 @@ const testimonials: TestimonialProps[] = [
     role: "Parent",
     platform: "Facebook",
     avatarUrl: "/lovable-uploads/2113b2de-a57a-48a0-9f96-393b1fd91b21.png"
-  }, {
+  }, 
+  {
     quote: "As an OG of this prestigious institution, I can confidently say that the values and education I received at Wits College Namulanda prepared me exceptionally well for university and beyond.",
     name: "Robert Mukasa",
     role: "OG, Class of 2010",
     platform: "LinkedIn"
-  }, {
+  }, 
+  {
     quote: "The e-learning facilities at Wits College are unmatched. During the pandemic, my son's education continued seamlessly thanks to their advanced digital infrastructure.",
     name: "Timothy Ssekandi",
     role: "Parent",
     platform: "Twitter"
-  }, {
+  }, 
+  {
     quote: "Looking back at my time at Wits College Namulanda, I'm grateful for the lifelong friendships and the holistic education that shaped who I am today. It's not just a school, it's a family.",
     name: "Joyce Nakimuli",
     role: "OB, Class of 2008",
     platform: "Instagram"
-  }, {
+  }, 
+  {
     quote: "The dedication to academic excellence combined with character development makes Wits College Namulanda stand out among other schools. My two children have benefited immensely from this balanced approach.",
     name: "Peter Ochieng",
     role: "Parent",
@@ -92,7 +102,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps }) => 
   </Card>
 );
 
-const Testimonials = () => {
+const Testimonials: React.FC = () => {
   return (
     <section className="py-16 bg-yellow-500">
       <div className="campus-container bg-yellow-500">
