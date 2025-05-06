@@ -31,9 +31,9 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light">
-      <QueryClientProvider client={queryClient}>
-        <Router>
+    <Router>
+      <ThemeProvider defaultTheme="light">
+        <QueryClientProvider client={queryClient}>
           <div className="flex flex-col min-h-screen">
             <Navigation />
             <main className="flex-grow">
@@ -61,9 +61,9 @@ function App() {
             <Footer />
           </div>
           <Toaster />
-        </Router>
-      </QueryClientProvider>
-    </ThemeProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 
