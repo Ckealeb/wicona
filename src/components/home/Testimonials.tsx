@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -61,6 +62,36 @@ const getInitials = (name: string) => {
   return name.split(" ").map(n => n[0]).join("").toUpperCase();
 };
 
+const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps }) => (
+  <Card className="border border-gray-200 h-full shadow-sm hover:shadow-md transition-all bg-white">
+    <CardContent className="p-6 flex flex-col h-full bg-amber-200">
+      <div className="flex items-start mb-4">
+        <Avatar className="h-10 w-10 mr-3">
+          {testimonial.avatarUrl ? (
+            <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
+          ) : (
+            <AvatarFallback className="bg-campus-primary text-white">
+              {getInitials(testimonial.name)}
+            </AvatarFallback>
+          )}
+        </Avatar>
+        <div className="flex-1">
+          <h4 className="font-medium text-gray-900">{testimonial.name}</h4>
+          <div className="flex items-center text-sm text-gray-500">
+            <span>{testimonial.role}</span>
+            <span className="mx-2">•</span>
+            <div className="flex items-center">
+              {getPlatformIcon(testimonial.platform)}
+              <span className="ml-1">{testimonial.platform}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <blockquote className="flex-1 italic text-gray-700">"{testimonial.quote}"</blockquote>
+    </CardContent>
+  </Card>
+);
+
 const Testimonials = () => {
   return (
     <section className="py-16 bg-yellow-500">
@@ -82,33 +113,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4 pb-4">
                   <div className="h-full">
-                    <Card className="border border-gray-200 h-full shadow-sm hover:shadow-md transition-all bg-white">
-                      <CardContent className="p-6 flex flex-col h-full bg-amber-200">
-                        <div className="flex items-start mb-4">
-                          <Avatar className="h-10 w-10 mr-3">
-                            {testimonial.avatarUrl ? (
-                              <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
-                            ) : (
-                              <AvatarFallback className="bg-campus-primary text-white">
-                                {getInitials(testimonial.name)}
-                              </AvatarFallback>
-                            )}
-                          </Avatar>
-                          <div className="flex-1">
-                            <h4 className="font-medium text-gray-900">{testimonial.name}</h4>
-                            <div className="flex items-center text-sm text-gray-500">
-                              <span>{testimonial.role}</span>
-                              <span className="mx-2">•</span>
-                              <div className="flex items-center">
-                                {getPlatformIcon(testimonial.platform)}
-                                <span className="ml-1">{testimonial.platform}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <blockquote className="flex-1 italic text-gray-700">"{testimonial.quote}"</blockquote>
-                      </CardContent>
-                    </Card>
+                    <TestimonialCard testimonial={testimonial} />
                   </div>
                 </CarouselItem>
               ))}
