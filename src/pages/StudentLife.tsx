@@ -1,13 +1,12 @@
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Book, Users, Award, Star } from "lucide-react";
+
 const StudentLife = () => {
-  return <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-green-50">
+  return (
+    <div className="min-h-screen bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Student Life</h1>
           
@@ -143,7 +142,8 @@ const StudentLife = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default StudentLife;

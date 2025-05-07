@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -151,9 +150,8 @@ const HomeworkExams = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-green-50">
+    <div className="min-h-screen bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Homework & Examinations</h1>
           
@@ -216,7 +214,6 @@ const HomeworkExams = () => {
                 ))}
               </TabsList>
               
-              {/* Hidden TabsContent to satisfy the Tabs component requirement */}
               {classLevels.map(level => (
                 <TabsContent key={level.id} value={level.id} className="hidden"></TabsContent>
               ))}
@@ -332,7 +329,6 @@ const HomeworkExams = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,7 +1,4 @@
-
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GraduationCap, BookOpen, Users, Award, Bookmark, Star } from "lucide-react";
@@ -9,9 +6,8 @@ import { Link } from "react-router-dom";
 
 const Academics = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-green-50">
+    <div className="min-h-screen bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Academic Programs</h1>
           
@@ -138,7 +134,6 @@ const Academics = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
