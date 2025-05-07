@@ -1,10 +1,11 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { scrollToTop } from "@/utils/scrollUtils";
 
 interface NavLink {
   title: string;
@@ -61,21 +62,27 @@ const navLinks: NavLink[] = [{
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const isMobile = useIsMobile();
+  const location = useLocation();
   
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
+  };
+
+  // Function to handle navigation and scroll to top
+  const handleNavigation = () => {
+    scrollToTop();
   };
   
   return <header className="sticky top-0 z-50 bg-campus-light shadow-sm transition-colors duration-300">
       <div className="bg-campus-accent/20 text-campus-primary text-center py-2 transition-colors duration-300">
         <p className="text-sm font-medium">
           Registration open for 2025 academic year! 
-          <Link to="/admissions" className="underline font-bold ml-1">Apply now</Link>
+          <Link to="/admissions" className="underline font-bold ml-1" onClick={handleNavigation}>Apply now</Link>
         </p>
       </div>
       
       <nav className="campus-container flex items-center justify-between py-4 bg-lime-400 transition-colors duration-300">
-        <Link to="/" className="group border-4 border-double border-campus-primary rounded-lg p-1">
+        <Link to="/" className="group border-4 border-double border-campus-primary rounded-lg p-1" onClick={handleNavigation}>
           <div className="relative flex items-center">
             <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-16 h-16 object-contain transition-transform group-hover:scale-105" />
             <div className="ml-3 flex flex-col items-start">
@@ -89,7 +96,7 @@ const Navigation = () => {
         <div className="hidden md:flex items-center space-x-8 bg-lime-400 transition-colors duration-300">
           {navLinks.map(link => <div key={link.title} className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer">
-                <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors" onClick={() => link.children && toggleDropdown(link.title)}>
+                <Link to={link.path} className="text-gray-700 hover:text-campus-blue transition-colors" onClick={handleNavigation}>
                   {link.title}
                 </Link>
                 {link.children && <ChevronDown size={16} className="text-gray-500 transition-transform group-hover:rotate-180" />}
@@ -97,7 +104,7 @@ const Navigation = () => {
               
               {link.children && <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="py-1">
-                    {link.children.map(childLink => <Link key={childLink.title} to={childLink.path} className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white">
+                    {link.children.map(childLink => <Link key={childLink.title} to={childLink.path} className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white" onClick={handleNavigation}>
                         {childLink.title}
                       </Link>)}
                   </div>
@@ -128,6 +135,7 @@ const Navigation = () => {
                         <Link 
                           to={link.path} 
                           className="text-lg font-medium text-lime-300 hover:text-lime-100"
+                          onClick={handleNavigation}
                         >
                           {link.title}
                         </Link>
@@ -138,6 +146,7 @@ const Navigation = () => {
                                 <Link 
                                   to={child.path} 
                                   className="text-gray-300 hover:text-lime-300 block py-1"
+                                  onClick={handleNavigation}
                                 >
                                   {child.title}
                                 </Link>
@@ -150,7 +159,7 @@ const Navigation = () => {
                   </ul>
                 </nav>
                 <div className="p-4 border-t border-gray-800">
-                  <Link to="/portal" className="block w-full py-2 px-4 bg-lime-700 hover:bg-lime-600 text-white font-medium rounded text-center">
+                  <Link to="/portal" className="block w-full py-2 px-4 bg-lime-700 hover:bg-lime-600 text-white font-medium rounded text-center" onClick={handleNavigation}>
                     Portal Login
                   </Link>
                 </div>
@@ -159,7 +168,7 @@ const Navigation = () => {
           </Sheet>
 
           <div>
-            <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors hover:scale-105 transform duration-200">
+            <Link to="/portal" className="bg-campus-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors hover:scale-105 transform duration-200" onClick={handleNavigation}>
               Portal Login
             </Link>
           </div>

@@ -1,12 +1,12 @@
+
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import LocationMap from "@/components/map/LocationMap";
 import { MapPin, Phone, Mail, Twitter, Instagram } from "lucide-react";
+
 const Contact = () => {
-  return <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-green-50">
+  return (
+    <div className="min-h-screen bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Contact Wits College Namulada</h1>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -79,7 +79,8 @@ const Contact = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;
