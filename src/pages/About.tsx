@@ -1,12 +1,12 @@
+
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Users, Building, Award } from "lucide-react";
+
 const About = () => {
-  return <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-green-50">
+  return (
+    <div className="min-h-screen bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16 bg-yellow-200">
           <h1 className="section-title">About Wits College Namulada</h1>
           
@@ -77,7 +77,8 @@ const About = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default About;
