@@ -3,8 +3,10 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Shield, Star, School, Award } from "lucide-react";
+
 const Leadership = () => {
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow">
         {/* Page Header */}
@@ -237,6 +239,8 @@ const Leadership = () => {
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Leadership;

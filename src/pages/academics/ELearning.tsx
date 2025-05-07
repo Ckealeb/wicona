@@ -1,16 +1,12 @@
-
 import React from "react";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Laptop, BookOpen, Video, FileText, Download, Users, BookText } from "lucide-react";
 
 const ELearning = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow bg-gradient-to-b from-green-50 to-amber-50">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-amber-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 mb-10 border border-green-100 shadow-md">
@@ -189,7 +185,6 @@ const ELearning = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -5,10 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, GraduationCap, Star, Award, Bookmark } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const Curriculum = () => {
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen bg-green-50">
       <Navigation />
-      <main className="flex-grow bg-green-50">
+      <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Our Curriculum</h1>
           
@@ -249,6 +251,8 @@ const Curriculum = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Curriculum;
