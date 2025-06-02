@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Curriculum = () => {
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="w-full bg-green-50">
       <Navigation />
       <main className="flex-grow">
         <div className="campus-container py-16">

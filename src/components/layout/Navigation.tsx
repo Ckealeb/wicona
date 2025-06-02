@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -78,8 +78,10 @@ const navLinks: NavLink[] = [
 
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
   const toggleDropdown = (title: string) => {
     setActiveDropdown(activeDropdown === title ? null : title);
@@ -88,7 +90,29 @@ const Navigation = () => {
   // Function to handle navigation and scroll to top
   const handleNavigation = () => {
     scrollToTop();
+    setActiveDropdown(null); // Close dropdown after navigation
+    setMobileMenuOpen(false); // Close mobile menu after navigation
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setActiveDropdown(null);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
   
   return (
     <header className="sticky top-0 z-50 bg-campus-light shadow-sm transition-colors duration-300 w-full">
@@ -125,10 +149,10 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 bg-lime-400 transition-colors duration-300">
+        <div ref={dropdownRef} className="hidden lg:flex items-center space-x-6 xl:space-x-8 bg-lime-400 transition-colors duration-300">
           {navLinks.map(link => (
-            <div key={link.title} className="relative group">
-              <div className="flex items-center space-x-1 cursor-pointer">
+            <div key={link.title} className="relative">
+              <div className="flex items-center space-x-1">
                 <Link 
                   to={link.path} 
                   className="text-gray-700 hover:text-campus-blue transition-colors text-sm xl:text-base" 
@@ -137,18 +161,28 @@ const Navigation = () => {
                   {link.title}
                 </Link>
                 {link.children && (
-                  <ChevronDown size={16} className="text-gray-500 transition-transform group-hover:rotate-180" />
+                  <button
+                    onClick={() => toggleDropdown(link.title)}
+                    className="p-1 text-gray-500 hover:text-campus-blue transition-colors"
+                  >
+                    <ChevronDown 
+                      size={16} 
+                      className={`transition-transform duration-200 ${
+                        activeDropdown === link.title ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
                 )}
               </div>
               
-              {link.children && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              {link.children && activeDropdown === link.title && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200">
                   <div className="py-1">
                     {link.children.map(childLink => (
                       <Link 
                         key={childLink.title} 
                         to={childLink.path} 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white" 
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white transition-colors" 
                         onClick={handleNavigation}
                       >
                         {childLink.title}
@@ -163,7 +197,7 @@ const Navigation = () => {
 
         <div className="flex items-center space-x-2 sm:space-x-3">
           {/* Mobile Navigation Button */}
-          <Sheet>
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="outline" size="icon" className="border-campus-primary h-8 w-8 sm:h-10 sm:w-10">
                 <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-campus-primary" />
