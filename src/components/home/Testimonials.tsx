@@ -56,15 +56,15 @@ const testimonials: TestimonialProps[] = [
 const getPlatformIcon = (platform: string) => {
   switch (platform) {
     case "Twitter":
-      return <MessageCircle className="h-4 w-4 text-blue-400" />;
+      return <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />;
     case "Facebook":
-      return <MessageSquare className="h-4 w-4 text-blue-600" />;
+      return <MessageSquare className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />;
     case "Instagram":
-      return <MessageCircle className="h-4 w-4 text-pink-500" />;
+      return <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 text-pink-500" />;
     case "LinkedIn":
-      return <MessageSquare className="h-4 w-4 text-blue-700" />;
+      return <MessageSquare className="h-3 w-3 sm:h-4 sm:w-4 text-blue-700" />;
     default:
-      return <MessageCircle className="h-4 w-4" />;
+      return <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />;
   }
 };
 
@@ -74,44 +74,48 @@ const getInitials = (name: string) => {
 
 const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps }) => (
   <Card className="border border-gray-200 h-full shadow-sm hover:shadow-md transition-all bg-white">
-    <CardContent className="p-6 flex flex-col h-full bg-amber-200">
-      <div className="flex items-start mb-4">
-        <Avatar className="h-10 w-10 mr-3">
+    <CardContent className="p-4 sm:p-6 flex flex-col h-full bg-amber-200">
+      <div className="flex items-start mb-3 sm:mb-4">
+        <Avatar className="h-8 w-8 sm:h-10 sm:w-10 mr-2 sm:mr-3 flex-shrink-0">
           {testimonial.avatarUrl ? (
             <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
           ) : (
-            <AvatarFallback className="bg-campus-primary text-white">
+            <AvatarFallback className="bg-campus-primary text-white text-xs sm:text-sm">
               {getInitials(testimonial.name)}
             </AvatarFallback>
           )}
         </Avatar>
-        <div className="flex-1">
-          <h4 className="font-medium text-gray-900">{testimonial.name}</h4>
-          <div className="flex items-center text-sm text-gray-500">
-            <span>{testimonial.role}</span>
-            <span className="mx-2">•</span>
-            <div className="flex items-center">
+        <div className="flex-1 min-w-0">
+          <h4 className="font-medium text-gray-900 text-sm sm:text-base truncate">{testimonial.name}</h4>
+          <div className="flex items-center text-xs sm:text-sm text-gray-500 flex-wrap">
+            <span className="truncate">{testimonial.role}</span>
+            <span className="mx-1 sm:mx-2">•</span>
+            <div className="flex items-center flex-shrink-0">
               {getPlatformIcon(testimonial.platform)}
               <span className="ml-1">{testimonial.platform}</span>
             </div>
           </div>
         </div>
       </div>
-      <blockquote className="flex-1 italic text-gray-700">"{testimonial.quote}"</blockquote>
+      <blockquote className="flex-1 italic text-gray-700 text-sm sm:text-base leading-relaxed">
+        "{testimonial.quote}"
+      </blockquote>
     </CardContent>
   </Card>
 );
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="py-16 bg-yellow-500">
+    <section className="py-8 sm:py-12 lg:py-16 bg-yellow-500">
       <div className="campus-container bg-yellow-500">
-        <h2 className="section-title mb-8">What People Are Saying</h2>
-        <p className="text-center text-lg text-gray-700 mb-10">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-playfair font-bold text-campus-primary mb-6 sm:mb-8 text-center">
+          What People Are Saying
+        </h2>
+        <p className="text-center text-base sm:text-lg text-gray-700 mb-8 sm:mb-10 max-w-3xl mx-auto px-4">
           Read what our community shares about their experience with Wits College Namulanda
         </p>
 
-        <div className="w-full max-w-5xl mx-auto">
+        <div className="w-full max-w-5xl mx-auto px-4">
           <Carousel
             opts={{
               align: "start",
@@ -119,18 +123,18 @@ const Testimonials: React.FC = () => {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 sm:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4 pb-4">
+                <CarouselItem key={index} className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <div className="h-full">
                     <TestimonialCard testimonial={testimonial} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <CarouselPrevious className="relative static translate-y-0 mr-2 text-zinc-950 bg-sky-400 hover:bg-sky-300" />
-              <CarouselNext className="relative static translate-y-0 ml-2 text-cyan-950 bg-sky-500 hover:bg-sky-400" />
+            <div className="flex justify-center mt-4 sm:mt-6">
+              <CarouselPrevious className="relative static translate-y-0 mr-2 text-zinc-950 bg-sky-400 hover:bg-sky-300 h-8 w-8 sm:h-10 sm:w-10" />
+              <CarouselNext className="relative static translate-y-0 ml-2 text-cyan-950 bg-sky-500 hover:bg-sky-400 h-8 w-8 sm:h-10 sm:w-10" />
             </div>
           </Carousel>
         </div>
