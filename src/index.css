@@ -94,7 +94,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-inter w-full;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -104,7 +112,7 @@
 
 @layer components {
   .campus-container {
-    @apply container mx-auto px-4 md:px-6 py-8;
+    @apply w-full max-w-none px-4 md:px-6 lg:px-8 xl:px-12 py-8;
   }
   
   .section-title {

@@ -91,8 +91,8 @@ const Navigation = () => {
   };
   
   return (
-    <header className="sticky top-0 z-50 bg-campus-light shadow-sm transition-colors duration-300">
-      <div className="bg-campus-accent/20 text-campus-primary text-center py-1 sm:py-2 transition-colors duration-300">
+    <header className="sticky top-0 z-50 bg-campus-light shadow-sm transition-colors duration-300 w-full">
+      <div className="bg-campus-accent/20 text-campus-primary text-center py-1 sm:py-2 transition-colors duration-300 w-full">
         <p className="text-xs sm:text-sm font-medium px-2">
           Registration open for 2025 academic year! 
           <Link to="/admissions" className="underline font-bold ml-1" onClick={handleNavigation}>
@@ -101,7 +101,7 @@ const Navigation = () => {
         </p>
       </div>
       
-      <nav className="campus-container flex items-center justify-between py-2 sm:py-4 bg-lime-400 transition-colors duration-300">
+      <nav className="w-full px-4 md:px-6 lg:px-8 xl:px-12 flex items-center justify-between py-2 sm:py-4 bg-lime-400 transition-colors duration-300">
         <Link 
           to="/" 
           className="group border-2 sm:border-4 border-double border-campus-primary rounded-lg p-1 sm:p-1" 

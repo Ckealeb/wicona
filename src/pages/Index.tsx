@@ -10,16 +10,14 @@ import CallToAction from "@/components/home/CallToAction";
 
 const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
-        <Hero />
-        <Features />
-        <AboutSection />
-        <Stats />
-        <Testimonials />
-        <NewsEvents />
-        <CallToAction />
-      </main>
+    <div className="w-full">
+      <Hero />
+      <Features />
+      <AboutSection />
+      <Stats />
+      <Testimonials />
+      <NewsEvents />
+      <CallToAction />
     </div>
   );
 };

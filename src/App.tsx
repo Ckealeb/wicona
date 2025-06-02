@@ -47,7 +47,7 @@ function AppRoutes() {
     <>
       <ScrollToTop />
       <Navigation />
-      <main className="flex-grow">
+      <main className="flex-grow w-full">
         <Routes>
           <Route path="/" element={<Index />} />
           
@@ -78,7 +78,7 @@ function App() {
   return (
     <Router>
       <QueryClientProvider client={queryClient}>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen w-full">
           <AppRoutes />
         </div>
         <Toaster />

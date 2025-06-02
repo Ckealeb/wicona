@@ -1,9 +1,12 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
+
 const Footer = () => {
-  return <footer className="bg-campus-blue text-white">
-      <div className="campus-container py-12 bg-lime-900 rounded-sm">
+  return (
+    <footer className="bg-campus-blue text-white w-full">
+      <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 py-12 bg-lime-900 rounded-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-6 group border-4 border-double border-campus-primary rounded-lg p-1">
@@ -85,6 +88,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
