@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
@@ -11,7 +10,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-6 group border-4 border-double border-campus-primary rounded-lg p-1">
               <div className="relative">
-                <img src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" alt="Witts College Namulada" className="w-14 h-14 object-contain bg-white/10 rounded-lg p-2 transition-transform group-hover:scale-105" />
+                <img src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" alt="Wits College Namulanda" className="w-14 h-14 object-contain bg-white/10 rounded-lg p-2 transition-transform group-hover:scale-105" />
               </div>
               <div className="flex flex-col">
                 <span className="font-times font-bold text-lg tracking-wide text-campus-accent">WITS COLLEGE</span>
