@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -133,8 +132,8 @@ const Navigation = () => {
         >
           <div className="relative flex items-center">
             <img 
-              src="/lovable-uploads/01e3fda9-2cca-4e09-a3b8-fb1ac5e86e7b.png" 
-              alt="Witts College Namulada" 
+              src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" 
+              alt="Wits College Namulanda" 
               className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain transition-transform group-hover:scale-105" 
             />
             <div className="ml-2 sm:ml-3 flex flex-col items-start">
@@ -208,7 +207,14 @@ const Navigation = () => {
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b border-gray-800">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-lg sm:text-xl text-lime-500">Menu</span>
+                    <div className="flex items-center space-x-3">
+                      <img 
+                        src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" 
+                        alt="Wits College Namulanda" 
+                        className="w-8 h-8 object-contain" 
+                      />
+                      <span className="font-bold text-lg sm:text-xl text-lime-500">WITS COLLEGE</span>
+                    </div>
                   </div>
                 </div>
                 <nav className="flex-1 overflow-auto p-4">
