@@ -1,11 +1,8 @@
-
 import React from "react";
 import LocationMap from "@/components/map/LocationMap";
 import { MapPin, Phone, Mail, Twitter, Instagram } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-green-50">
+  return <div className="min-h-screen bg-green-50">
       <main className="flex-grow">
         <div className="campus-container py-16">
           <h1 className="section-title">Contact Wits College Namulada</h1>
@@ -31,7 +28,7 @@ const Contact = () => {
                 <div className="space-y-3 text-gray-600">
                   <div className="flex items-center gap-2">
                     <Phone className="text-green-600" size={18} />
-                    <p>Phone: (123) 456-7890</p>
+                    <p>Phone: +256782862270/ +258753336275/ +256772445637</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="text-green-600" size={18} />
@@ -79,8 +76,6 @@ const Contact = () => {
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
