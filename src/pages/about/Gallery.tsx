@@ -18,6 +18,26 @@ const Gallery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                image: "/lovable-uploads/fcaa4ddf-b28f-4fa0-b4d1-56afa4652aa3.png",
+                title: "Main Academic Block",
+                description: "Our impressive three-story main academic building with modern facilities"
+              },
+              {
+                image: "/lovable-uploads/63f2fbf1-b6f1-46f1-8dd4-f0c1c55c4c80.png",
+                title: "Campus Courtyard",
+                description: "Beautiful modern architecture with landscaped courtyards for student gatherings"
+              },
+              {
+                image: "/lovable-uploads/402322b0-1227-48a8-a7a7-84c09f48b77f.png",
+                title: "Classroom Complex",
+                description: "Spacious classroom buildings with natural lighting and green surroundings"
+              },
+              {
+                image: "/lovable-uploads/e651f520-619d-4e92-b054-326fe98d8f5c.png",
+                title: "Administration Block",
+                description: "Modern administration building with covered walkways and palm trees"
+              },
+              {
                 image: "/lovable-uploads/10c21ebf-bf0d-4831-8ee0-3c60a75b5087.png",
                 title: "Student Assembly",
                 description: "Our students in their uniforms during a campus gathering"
