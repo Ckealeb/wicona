@@ -14,6 +14,9 @@ import Admissions from "@/pages/Admissions";
 import Contact from "@/pages/Contact";
 import StudentLife from "@/pages/StudentLife";
 import NotFound from "@/pages/NotFound";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfUse from "@/pages/TermsOfUse";
+import Accessibility from "@/pages/Accessibility";
 
 import Leadership from "@/pages/about/Leadership";
 import VirtualTour from "@/pages/about/VirtualTour";
@@ -65,6 +68,10 @@ function AppRoutes() {
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/student-life" element={<StudentLife />} />
+          
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
