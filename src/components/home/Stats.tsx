@@ -96,17 +96,24 @@ const Stats = () => {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-8 sm:py-12 lg:py-16 text-white bg-lime-800">
-      <div className="campus-container">
+    <section ref={sectionRef} className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-emerald-800 via-emerald-900 to-slate-900 relative overflow-hidden">
+      {/* Futuristic background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/50 to-transparent"></div>
+        <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent"></div>
+        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/50 to-transparent"></div>
+      </div>
+      
+      <div className="campus-container relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
           {stats.map((stat, index) => (
-            <div key={stat.id} className="p-3 sm:p-4 lg:p-6">
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-playfair font-bold mb-2 break-words">
+            <div key={stat.id} className="p-3 sm:p-4 lg:p-6 glass-effect rounded-lg border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-500 group hover:shadow-neon">
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-orbitron font-bold mb-2 break-words neon-text group-hover:animate-neon-flicker">
                 {stat.prefix && <span>{stat.prefix}</span>}
                 <span>{counters[index].toLocaleString()}</span>
                 {stat.suffix && <span>{stat.suffix}</span>}
               </div>
-              <div className="text-sm sm:text-base lg:text-xl opacity-90 leading-tight">{stat.label}</div>
+              <div className="text-sm sm:text-base lg:text-xl text-emerald-200 leading-tight font-orbitron">{stat.label}</div>
             </div>
           ))}
         </div>

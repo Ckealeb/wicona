@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,19 +64,28 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         campus: {
-          'primary': '#006400',
-          'secondary': '#228B22',
-          'accent': '#90EE90',
-          'light': '#F0FFF0',
-          'dark': '#004d00',
-          'border': '#4CAF50',
-          'glow': '#00FF00',
-          blue: '#0a2463',
-          teal: '#3BCEAC',
-          amber: '#FFC857',
-          gray: '#f2f2f2',
+          'primary': '#10b981',
+          'secondary': '#059669',
+          'accent': '#34d399',
+          'light': '#d1fae5',
+          'dark': '#047857',
+          'border': '#10b981',
+          'glow': '#6ee7b7',
+          blue: '#1e40af',
+          teal: '#0f766e',
+          amber: '#fbbf24',
+          gray: '#1f2937',
           white: '#ffffff',
+          neon: '#00ff88',
+          cyber: '#00d4ff',
         }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'futuristic-green': 'linear-gradient(135deg, #10b981, #059669, #047857)',
+        'cyber-glow': 'linear-gradient(135deg, #00ff88, #00d4ff, #10b981)',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(16,185,129,0.05))',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -109,6 +119,26 @@ export default {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(0)' }
         },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(16, 185, 129, 0.4)' 
+          },
+          '50%': { 
+            boxShadow: '0 0 40px rgba(16, 185, 129, 0.8), 0 0 60px rgba(16, 185, 129, 0.4)' 
+          }
+        },
+        'neon-flicker': {
+          '0%, 100%': { 
+            textShadow: '0 0 10px rgba(16, 185, 129, 0.8), 0 0 20px rgba(16, 185, 129, 0.4)' 
+          },
+          '50%': { 
+            textShadow: '0 0 5px rgba(16, 185, 129, 0.4), 0 0 10px rgba(16, 185, 129, 0.2)' 
+          }
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' }
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -116,12 +146,22 @@ export default {
         'fade-in': 'fade-in 0.5s ease-out forwards',
         'slide-in': 'slide-in 0.5s ease-out forwards',
         'slide-down': 'slide-down 0.3s ease-out forwards',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'neon-flicker': 'neon-flicker 3s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
         inter: ['Inter', 'sans-serif'],
         'times': ['Times New Roman', 'Times', 'serif'],
+        orbitron: ['Orbitron', 'monospace'],
       },
+      boxShadow: {
+        'neon': '0 0 20px rgba(16, 185, 129, 0.6)',
+        'neon-lg': '0 0 40px rgba(16, 185, 129, 0.8)',
+        'cyber': '0 0 30px rgba(0, 212, 255, 0.5)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
+      }
     }
   },
   plugins: [require("tailwindcss-animate")],

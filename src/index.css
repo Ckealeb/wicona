@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -94,19 +95,26 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter w-full;
+    @apply bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-800 text-foreground font-inter w-full min-h-screen;
     margin: 0;
     padding: 0;
+    background-attachment: fixed;
   }
   
   #root {
     width: 100%;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-bold;
+    @apply font-orbitron font-bold;
+    background: linear-gradient(135deg, #10b981, #059669, #047857);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
   }
 }
 
@@ -116,56 +124,143 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-campus-primary mb-6 font-playfair dark:text-lime-400;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-orbitron;
+    background: linear-gradient(135deg, #10b981, #059669, #047857);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
   }
   
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto dark:text-gray-300;
+    @apply text-lg md:text-xl text-emerald-200 mb-12 max-w-3xl mx-auto;
   }
   
   .futuristic-logo {
-    @apply relative inline-flex items-center p-3 transition-all duration-300;
+    @apply relative inline-flex items-center p-3 transition-all duration-500;
+    background: linear-gradient(135deg, 
+      rgba(16, 185, 129, 0.15),
+      rgba(5, 150, 105, 0.1),
+      rgba(4, 120, 87, 0.05));
     box-shadow: 
-      0 0 10px theme('colors.campus.glow'),
-      0 0 20px theme('colors.campus.accent'),
-      inset 0 0 15px theme('colors.campus.glow');
-    border: 2px solid theme('colors.campus.border');
+      0 0 20px rgba(16, 185, 129, 0.3),
+      0 0 40px rgba(5, 150, 105, 0.2),
+      inset 0 0 20px rgba(16, 185, 129, 0.1);
+    border: 2px solid rgba(16, 185, 129, 0.3);
     border-radius: 1rem;
-    background: linear-gradient(45deg, 
-      rgba(0,100,0,0.1),
-      rgba(0,255,0,0.05));
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
   }
 
   .futuristic-text {
-    @apply font-bold text-campus-primary transition-all duration-300 dark:text-lime-400;
-    text-shadow: 
-      0 0 5px theme('colors.campus.glow'),
-      0 0 10px theme('colors.campus.accent');
-    letter-spacing: 0.05em;
+    @apply font-bold transition-all duration-300 font-orbitron;
+    background: linear-gradient(135deg, #10b981, #059669);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    letter-spacing: 0.1em;
   }
   
   .btn-primary {
-    @apply bg-campus-blue text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-lime-700 dark:hover:bg-lime-600;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 font-orbitron;
+    background: linear-gradient(135deg, #10b981, #059669, #047857);
+    color: white;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    box-shadow: 
+      0 0 15px rgba(16, 185, 129, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 5px 25px rgba(16, 185, 129, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
   
   .btn-secondary {
-    @apply bg-campus-teal text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-teal-800;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 font-orbitron;
+    background: linear-gradient(135deg, #047857, #065f46);
+    color: white;
+    border: 1px solid rgba(4, 120, 87, 0.5);
+    box-shadow: 0 0 15px rgba(4, 120, 87, 0.3);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(4, 120, 87, 0.5);
   }
   
   .btn-accent {
-    @apply bg-campus-amber text-campus-blue px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity dark:bg-amber-600 dark:text-gray-900;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 font-orbitron;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #047857;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+  }
+  
+  .btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(251, 191, 36, 0.6);
   }
   
   .card-hover {
-    @apply transition-transform hover:scale-105 hover:shadow-lg;
+    @apply transition-all duration-500;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(16, 185, 129, 0.2),
+      0 0 30px rgba(16, 185, 129, 0.1);
   }
   
   .announcement-bar {
-    @apply bg-campus-amber text-campus-blue py-2 px-4 animate-slide-down dark:bg-amber-700 dark:text-white;
+    @apply py-2 px-4 animate-slide-down;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #047857;
   }
   
   .card {
-    @apply rounded-lg p-6 bg-white shadow-md dark:bg-gray-800 dark:text-white transition-colors duration-300;
+    @apply rounded-lg p-6 shadow-lg transition-all duration-500;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1),
+      rgba(16, 185, 129, 0.05),
+      rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 0 20px rgba(16, 185, 129, 0.1);
+  }
+
+  .futuristic-gradient-bg {
+    background: linear-gradient(135deg, 
+      rgba(16, 185, 129, 0.1),
+      rgba(5, 150, 105, 0.05),
+      rgba(4, 120, 87, 0.08));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .neon-text {
+    @apply font-orbitron;
+    background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 
+      0 0 10px rgba(16, 185, 129, 0.5),
+      0 0 20px rgba(16, 185, 129, 0.3),
+      0 0 30px rgba(16, 185, 129, 0.1);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
