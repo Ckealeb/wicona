@@ -114,20 +114,20 @@ const Navigation = () => {
   }, [location.pathname]);
   
   return (
-    <header className="sticky top-0 z-50 bg-campus-light shadow-sm transition-colors duration-300 w-full">
-      <div className="bg-campus-accent/20 text-campus-primary text-center py-1 sm:py-2 transition-colors duration-300 w-full">
-        <p className="text-xs sm:text-sm font-medium px-2">
+    <header className="sticky top-0 z-50 header-glass shadow-neon transition-colors duration-300 w-full">
+      <div className="bg-emerald-400/20 text-emerald-900 text-center py-1 sm:py-2 transition-colors duration-300 w-full backdrop-blur-sm">
+        <p className="text-xs sm:text-sm font-medium px-2 font-orbitron">
           Registration open for 2025 academic year! 
-          <Link to="/admissions" className="underline font-bold ml-1" onClick={handleNavigation}>
+          <Link to="/admissions" className="underline font-bold ml-1 hover:text-emerald-700 transition-colors" onClick={handleNavigation}>
             Apply now
           </Link>
         </p>
       </div>
       
-      <nav className="w-full px-4 md:px-6 lg:px-8 xl:px-12 flex items-center justify-between py-2 sm:py-4 bg-lime-400 transition-colors duration-300">
+      <nav className="w-full px-4 md:px-6 lg:px-8 xl:px-12 flex items-center justify-between py-2 sm:py-4 transition-colors duration-300">
         <Link 
           to="/" 
-          className="group border-2 sm:border-4 border-double border-campus-primary rounded-lg p-1 sm:p-1" 
+          className="group border-2 sm:border-4 border-double border-emerald-600 rounded-lg p-1 sm:p-1 glass-effect hover:shadow-neon transition-all duration-300" 
           onClick={handleNavigation}
         >
           <div className="relative flex items-center">
@@ -137,10 +137,10 @@ const Navigation = () => {
               className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain transition-transform group-hover:scale-105" 
             />
             <div className="ml-2 sm:ml-3 flex flex-col items-start">
-              <span className="font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold text-lime-950">
+              <span className="font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold text-emerald-900 group-hover:text-emerald-700 transition-colors">
                 WITS COLLEGE
               </span>
-              <span className="tracking-widest text-xs sm:text-sm lg:text-lg font-semibold text-lime-700">
+              <span className="tracking-widest text-xs sm:text-sm lg:text-lg font-semibold text-emerald-800 group-hover:text-emerald-600 transition-colors">
                 NAMULANDA
               </span>
             </div>
@@ -148,13 +148,13 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div ref={dropdownRef} className="hidden lg:flex items-center space-x-6 xl:space-x-8 bg-lime-400 transition-colors duration-300">
+        <div ref={dropdownRef} className="hidden lg:flex items-center space-x-6 xl:space-x-8 transition-colors duration-300">
           {navLinks.map(link => (
             <div key={link.title} className="relative">
               <div className="flex items-center space-x-1">
                 <Link 
                   to={link.path} 
-                  className="text-gray-700 hover:text-campus-blue transition-colors text-sm xl:text-base" 
+                  className="text-emerald-900 hover:text-emerald-600 transition-colors text-sm xl:text-base font-orbitron font-medium" 
                   onClick={handleNavigation}
                 >
                   {link.title}
@@ -162,7 +162,7 @@ const Navigation = () => {
                 {link.children && (
                   <button
                     onClick={() => toggleDropdown(link.title)}
-                    className="p-1 text-gray-500 hover:text-campus-blue transition-colors"
+                    className="p-1 text-emerald-700 hover:text-emerald-500 transition-colors"
                   >
                     <ChevronDown 
                       size={16} 
@@ -175,13 +175,13 @@ const Navigation = () => {
               </div>
               
               {link.children && activeDropdown === link.title && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200">
+                <div className="absolute left-0 mt-2 w-48 glass-effect rounded-md shadow-neon border border-emerald-400/30 z-50 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200">
                   <div className="py-1">
                     {link.children.map(childLink => (
                       <Link 
                         key={childLink.title} 
                         to={childLink.path} 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-campus-teal hover:text-white transition-colors" 
+                        className="block px-4 py-2 text-sm text-emerald-200 hover:bg-emerald-500/20 hover:text-emerald-100 transition-colors font-orbitron" 
                         onClick={handleNavigation}
                       >
                         {childLink.title}
@@ -198,12 +198,12 @@ const Navigation = () => {
           {/* Mobile Navigation Button */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="outline" size="icon" className="border-campus-primary h-8 w-8 sm:h-10 sm:w-10">
-                <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-campus-primary" />
+              <Button variant="outline" size="icon" className="border-emerald-600 h-8 w-8 sm:h-10 sm:w-10 glass-effect hover:shadow-neon">
+                <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-700" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[300px] p-0 bg-gray-900 text-white border-gray-800">
+            <SheetContent side="right" className="w-[280px] sm:w-[300px] p-0 bg-slate-900/90 text-white border-emerald-400/30 backdrop-blur-md">
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b border-gray-800">
                   <div className="flex items-center justify-between">
@@ -263,7 +263,7 @@ const Navigation = () => {
           <div>
             <Link 
               to="/portal" 
-              className="bg-campus-primary text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-campus-dark transition-colors hover:scale-105 transform duration-200 text-xs sm:text-sm lg:text-base hidden sm:block" 
+              className="bg-emerald-600 text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-emerald-500 transition-all hover:scale-105 transform duration-200 text-xs sm:text-sm lg:text-base hidden sm:block font-orbitron shadow-neon" 
               onClick={handleNavigation}
             >
               Portal Login

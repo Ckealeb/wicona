@@ -5,12 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 const Gallery = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow bg-green-50">
+      <main className="flex-grow section-bg">
         <div className="campus-container py-16">
           <h1 className="section-title">Media Gallery</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-emerald-200 font-orbitron text-center">
               Explore moments and memories from our vibrant campus life through our photo gallery.
             </p>
           </div>
@@ -73,17 +73,18 @@ const Gallery = () => {
                 description: "Advanced programming sessions"
               },
             ].map((item, index) => (
-              <Card key={index} className="overflow-hidden">
+              <Card key={index} className="overflow-hidden glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
                 <div className="aspect-video relative">
                   <img 
                     src={item.image} 
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent"></div>
                 </div>
                 <CardContent className="pt-4">
-                  <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <h3 className="font-semibold text-lg mb-1 text-emerald-100 font-orbitron">{item.title}</h3>
+                  <p className="text-emerald-200 text-sm font-orbitron">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
