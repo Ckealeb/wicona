@@ -17,6 +17,11 @@ import NotFound from "@/pages/NotFound";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfUse from "@/pages/TermsOfUse";
 import Accessibility from "@/pages/Accessibility";
+import ParentResources from "@/pages/ParentResources";
+import Faculty from "@/pages/Faculty";
+import Alumni from "@/pages/Alumni";
+import Careers from "@/pages/Careers";
+import Policies from "@/pages/Policies";
 
 import Leadership from "@/pages/about/Leadership";
 import VirtualTour from "@/pages/about/VirtualTour";
@@ -68,6 +73,12 @@ function AppRoutes() {
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/student-life" element={<StudentLife />} />
+          
+          <Route path="/parent-resources" element={<ParentResources />} />
+          <Route path="/faculty" element={<Faculty />} />
+          <Route path="/alumni" element={<Alumni />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/policies" element={<Policies />} />
           
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
