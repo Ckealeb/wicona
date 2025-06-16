@@ -6,19 +6,19 @@ import { Building, Library, Users, BookOpen } from "lucide-react";
 const VirtualTour = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow bg-green-50">
+      <main className="flex-grow section-bg">
         <div className="campus-container py-16">
           <h1 className="section-title">Virtual Campus Tour</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-emerald-200 font-orbitron text-center">
               Experience the beauty and facilities of Witts College Namulada through our virtual tour.
               Explore our modern campus and see what makes our institution special.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-white">
+            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -27,17 +27,17 @@ const VirtualTour = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 flex items-center gap-2">
-                  <Building className="w-5 h-5" />
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2 font-orbitron">
+                  <Building className="w-5 h-5 text-emerald-600" />
                   Main Academic Block
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700 font-orbitron">
                   Our impressive three-story main academic building houses modern classrooms and administrative offices
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -46,17 +46,17 @@ const VirtualTour = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 flex items-center gap-2">
-                  <Users className="w-5 h-5" />
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2 font-orbitron">
+                  <Users className="w-5 h-5 text-emerald-600" />
                   Campus Courtyard
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700 font-orbitron">
                   Beautiful courtyard with modern architecture and well-maintained green spaces for student activities
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -65,17 +65,17 @@ const VirtualTour = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5" />
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2 font-orbitron">
+                  <BookOpen className="w-5 h-5 text-emerald-600" />
                   Classroom Complex
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700 font-orbitron">
                   Spacious classroom buildings designed for optimal learning environments with natural lighting
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -84,11 +84,11 @@ const VirtualTour = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 flex items-center gap-2">
-                  <Library className="w-5 h-5" />
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2 font-orbitron">
+                  <Library className="w-5 h-5 text-emerald-600" />
                   Administration Block
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700 font-orbitron">
                   Modern administration building with covered walkways and landscaped grounds
                 </p>
               </CardContent>
