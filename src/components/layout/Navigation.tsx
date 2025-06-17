@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, MoreHorizontal } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { scrollToTop } from "@/utils/scrollUtils";
@@ -198,8 +198,12 @@ const Navigation = () => {
           {/* Mobile Navigation Button */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="outline" size="icon" className="border-emerald-600 h-8 w-8 sm:h-10 sm:w-10 glass-effect hover:shadow-neon">
-                <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-700" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="h-8 w-8 sm:h-10 sm:w-10 bg-transparent border-none hover:bg-transparent p-0"
+              >
+                <MoreHorizontal className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
