@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { X, ChevronDown, MoreHorizontal } from "lucide-react";
+import { X, ChevronDown, MoreVertical } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { scrollToTop } from "@/utils/scrollUtils";
@@ -203,7 +203,7 @@ const Navigation = () => {
                 size="icon" 
                 className="h-8 w-8 sm:h-10 sm:w-10 bg-transparent border-none hover:bg-transparent p-0"
               >
-                <MoreHorizontal className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                <MoreVertical className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
