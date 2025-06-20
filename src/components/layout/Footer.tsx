@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
@@ -69,7 +70,9 @@ const Footer = () => {
             <address className="not-italic space-y-2 text-sm font-orbitron">
               <p>Namulada Campus</p>
               <p>Wakiso, Uganda</p>
-              <p>Phone: (123) 456-7890</p>
+              <p>Phone: +256782862270</p>
+              <p>Phone: +256753336275</p>
+              <p>Phone: +256772445637</p>
               <p>Email: info@wittscollege.edu</p>
             </address>
             <Link to="/contact" className="inline-block mt-4 px-4 py-2 bg-emerald-500 text-emerald-900 rounded hover:bg-emerald-400 transition-all font-medium shadow-neon hover:shadow-neon-lg transform hover:scale-105 duration-200 font-orbitron">

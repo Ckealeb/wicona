@@ -1,8 +1,7 @@
-
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { X, ChevronDown, MoreVertical } from "lucide-react";
+import { X, ChevronDown, MoreVertical, ArrowLeft } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { scrollToTop } from "@/utils/scrollUtils";
@@ -82,6 +81,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
   
   const toggleDropdown = (title: string) => {
@@ -93,6 +93,12 @@ const Navigation = () => {
     scrollToTop();
     setActiveDropdown(null); // Close dropdown after navigation
     setMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  // Function to handle back navigation
+  const handleBackNavigation = () => {
+    navigate(-1);
+    scrollToTop();
   };
 
   // Handle scroll events for dynamic color change
@@ -140,31 +146,41 @@ const Navigation = () => {
       </div>
       
       <nav className="w-full px-4 md:px-6 lg:px-8 xl:px-12 flex items-center justify-between py-2 sm:py-4 transition-colors duration-300">
-        <Link 
-          to="/" 
-          className="group border-2 sm:border-4 border-double border-emerald-600 rounded-lg p-1 sm:p-1 glass-effect hover:shadow-neon transition-all duration-300" 
-          onClick={handleNavigation}
-        >
-          <div className="relative flex items-center">
-            <img 
-              src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" 
-              alt="Wits College Namulanda" 
-              className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain transition-transform group-hover:scale-105" 
-            />
-            <div className="ml-2 sm:ml-3 flex flex-col items-start">
-              <span className={`font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold transition-colors duration-300 ${
-                isScrolled ? 'text-white' : 'text-emerald-900'
-              } group-hover:${isScrolled ? 'text-emerald-200' : 'text-emerald-700'}`}>
-                WITS COLLEGE
-              </span>
-              <span className={`tracking-widest text-xs sm:text-sm lg:text-lg font-semibold transition-colors duration-300 ${
-                isScrolled ? 'text-emerald-200' : 'text-emerald-800'
-              } group-hover:${isScrolled ? 'text-emerald-300' : 'text-emerald-600'}`}>
-                NAMULANDA
-              </span>
+        <div className="flex items-center space-x-3">
+          {/* Back Navigation Button */}
+          <Button
+            onClick={handleBackNavigation}
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 sm:h-10 sm:w-10 bg-transparent border-none hover:bg-white/10 p-0 transition-colors"
+          >
+            <ArrowLeft className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+            <span className="sr-only">Go Back</span>
+          </Button>
+
+          {/* School Logo and Name */}
+          <Link 
+            to="/" 
+            className="group transition-all duration-300" 
+            onClick={handleNavigation}
+          >
+            <div className="relative flex items-center">
+              <img 
+                src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" 
+                alt="Wits College Namulanda" 
+                className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain transition-transform group-hover:scale-105" 
+              />
+              <div className="ml-2 sm:ml-3 flex flex-col items-start">
+                <span className="font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold text-white transition-colors duration-300 group-hover:text-emerald-200">
+                  WITS COLLEGE
+                </span>
+                <span className="tracking-widest text-xs sm:text-sm lg:text-lg font-semibold text-white transition-colors duration-300 group-hover:text-emerald-300">
+                  NAMULANDA
+                </span>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <div ref={dropdownRef} className="hidden lg:flex items-center space-x-6 xl:space-x-8 transition-colors duration-300">
