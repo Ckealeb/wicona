@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -78,6 +79,7 @@ const navLinks: NavLink[] = [
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -92,6 +94,19 @@ const Navigation = () => {
     setActiveDropdown(null); // Close dropdown after navigation
     setMobileMenuOpen(false); // Close mobile menu after navigation
   };
+
+  // Handle scroll events for dynamic color change
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -137,10 +152,14 @@ const Navigation = () => {
               className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain transition-transform group-hover:scale-105" 
             />
             <div className="ml-2 sm:ml-3 flex flex-col items-start">
-              <span className="font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold text-emerald-900 group-hover:text-emerald-700 transition-colors">
+              <span className={`font-times tracking-wide text-sm sm:text-base lg:text-lg font-extrabold transition-colors duration-300 ${
+                isScrolled ? 'text-white' : 'text-emerald-900'
+              } group-hover:${isScrolled ? 'text-emerald-200' : 'text-emerald-700'}`}>
                 WITS COLLEGE
               </span>
-              <span className="tracking-widest text-xs sm:text-sm lg:text-lg font-semibold text-emerald-800 group-hover:text-emerald-600 transition-colors">
+              <span className={`tracking-widest text-xs sm:text-sm lg:text-lg font-semibold transition-colors duration-300 ${
+                isScrolled ? 'text-emerald-200' : 'text-emerald-800'
+              } group-hover:${isScrolled ? 'text-emerald-300' : 'text-emerald-600'}`}>
                 NAMULANDA
               </span>
             </div>
