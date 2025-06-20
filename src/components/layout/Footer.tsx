@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
@@ -9,12 +8,12 @@ const Footer = () => {
       <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Link to="/" className="flex items-center space-x-3 mb-6 group border-4 border-double border-emerald-300/50 rounded-lg p-1 glass-effect hover:shadow-neon transition-all duration-300">
+            <Link to="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative">
                 <img src="/lovable-uploads/9eedf15d-5ada-4d69-9fdf-f24c232b197c.png" alt="Wits College Namulanda" className="w-14 h-14 object-contain bg-white/10 rounded-lg p-2 transition-transform group-hover:scale-105" />
               </div>
               <div className="flex flex-col">
-                <span className="font-times font-bold text-lg tracking-wide text-emerald-200 font-orbitron">WITS COLLEGE</span>
+                <span className="font-times font-bold text-lg tracking-wide text-white font-orbitron">WITS COLLEGE</span>
                 <span className="text-sm tracking-widest text-emerald-300/80 font-orbitron">NAMULANDA</span>
               </div>
             </Link>
@@ -82,7 +81,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-emerald-400/30 text-sm text-center glass-effect rounded-lg p-4">
-          <p className="font-orbitron">© {new Date().getFullYear()} Campus Digital Sphere. All rights reserved.</p>
+          <p className="font-orbitron">© {new Date().getFullYear()} WICONA. All rights reserved.</p>
           <div className="mt-2 space-x-4 font-orbitron">
             <Link to="/privacy" className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-emerald-300 transition-colors">Terms of Use</Link>
