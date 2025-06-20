@@ -10,7 +10,7 @@ const Gallery = () => {
           <h1 className="section-title">Media Gallery</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-emerald-200 font-orbitron text-center">
+            <p className="text-lg text-white font-orbitron text-center">
               Explore moments and memories from our vibrant campus life through our photo gallery.
             </p>
           </div>
@@ -83,7 +83,7 @@ const Gallery = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent"></div>
                 </div>
                 <CardContent className="pt-4">
-                  <h3 className="font-semibold text-lg mb-1 text-emerald-100 font-orbitron">{item.title}</h3>
+                  <h3 className="font-semibold text-lg mb-1 text-white font-orbitron">{item.title}</h3>
                   <p className="text-emerald-200 text-sm font-orbitron">{item.description}</p>
                 </CardContent>
               </Card>

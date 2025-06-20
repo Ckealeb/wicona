@@ -11,14 +11,14 @@ const VirtualTour = () => {
           <h1 className="section-title">Virtual Campus Tour</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-emerald-200 font-orbitron text-center">
+            <p className="text-lg text-white font-orbitron text-center">
               Experience the beauty and facilities of Witts College Namulada through our virtual tour.
               Explore our modern campus and see what makes our institution special.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
+            <Card className="bg-white/95 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -37,7 +37,7 @@ const VirtualTour = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
+            <Card className="bg-white/95 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -56,7 +56,7 @@ const VirtualTour = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
+            <Card className="bg-white/95 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 
@@ -75,7 +75,7 @@ const VirtualTour = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm border border-emerald-200">
+            <Card className="bg-white/95 backdrop-blur-sm border border-emerald-200">
               <CardContent className="pt-6">
                 <div className="aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
                   <img 

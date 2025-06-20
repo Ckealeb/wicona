@@ -32,7 +32,7 @@ const Faculty = () => {
           <h1 className="section-title">Faculty & Staff</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-emerald-200 font-orbitron text-center">
+            <p className="text-lg text-white font-orbitron text-center">
               Meet our dedicated team of educators and staff committed to student excellence.
             </p>
           </div>
@@ -40,7 +40,7 @@ const Faculty = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <Award className="mr-3 text-emerald-400" size={24} />
                   Leadership Team
                 </CardTitle>
@@ -55,7 +55,7 @@ const Faculty = () => {
 
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <BookOpen className="mr-3 text-emerald-400" size={24} />
                   Academic Faculty
                 </CardTitle>
@@ -70,7 +70,7 @@ const Faculty = () => {
 
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <Users className="mr-3 text-emerald-400" size={24} />
                   Support Staff
                 </CardTitle>
@@ -85,18 +85,18 @@ const Faculty = () => {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-emerald-100 font-orbitron mb-6">Academic Departments</h2>
+            <h2 className="text-2xl font-bold text-white font-orbitron mb-6">Academic Departments</h2>
             
             {departments.map((dept, index) => (
               <Card key={index} className="glass-effect border-emerald-400/30">
                 <CardHeader>
-                  <CardTitle className="text-emerald-100 font-orbitron">{dept.name} Department</CardTitle>
+                  <CardTitle className="text-white font-orbitron">{dept.name} Department</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="font-semibold text-emerald-200 mb-2 font-orbitron">Department Head</h4>
-                      <p className="text-emerald-100 font-orbitron">{dept.head}</p>
+                      <p className="text-white font-orbitron">{dept.head}</p>
                       <div className="flex items-center mt-2 text-emerald-200">
                         <Mail className="mr-2 text-emerald-400" size={16} />
                         <span className="font-orbitron">{dept.email}</span>
@@ -106,7 +106,7 @@ const Faculty = () => {
                       <h4 className="font-semibold text-emerald-200 mb-2 font-orbitron">Faculty Members</h4>
                       <ul className="space-y-1">
                         {dept.staff.map((member, idx) => (
-                          <li key={idx} className="text-emerald-100 font-orbitron">{member}</li>
+                          <li key={idx} className="text-white font-orbitron">{member}</li>
                         ))}
                       </ul>
                     </div>

@@ -11,7 +11,7 @@ const ParentResources = () => {
           <h1 className="section-title">Parent Resources</h1>
           
           <div className="prose max-w-none mb-12">
-            <p className="text-lg text-emerald-200 font-orbitron text-center">
+            <p className="text-lg text-white font-orbitron text-center">
               Supporting parents and guardians with comprehensive resources for student success.
             </p>
           </div>
@@ -19,7 +19,7 @@ const ParentResources = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <FileText className="mr-3 text-emerald-400" size={24} />
                   Academic Handbook
                 </CardTitle>
@@ -37,7 +37,7 @@ const ParentResources = () => {
 
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <Calendar className="mr-3 text-emerald-400" size={24} />
                   Parent Calendar
                 </CardTitle>
@@ -52,7 +52,7 @@ const ParentResources = () => {
 
             <Card className="glass-effect border-emerald-400/30 hover:shadow-neon transition-all duration-500 card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center text-emerald-100 font-orbitron">
+                <CardTitle className="flex items-center text-white font-orbitron">
                   <Users className="mr-3 text-emerald-400" size={24} />
                   Parent Portal
                 </CardTitle>
@@ -69,20 +69,20 @@ const ParentResources = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card className="glass-effect border-emerald-400/30">
               <CardHeader>
-                <CardTitle className="text-emerald-100 font-orbitron">Contact Information</CardTitle>
+                <CardTitle className="text-white font-orbitron">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center text-emerald-200">
                   <Phone className="mr-3 text-emerald-400" size={20} />
                   <div className="font-orbitron">
-                    <p className="font-semibold">Main Office</p>
+                    <p className="font-semibold text-white">Main Office</p>
                     <p>(123) 456-7890</p>
                   </div>
                 </div>
                 <div className="flex items-center text-emerald-200">
                   <Mail className="mr-3 text-emerald-400" size={20} />
                   <div className="font-orbitron">
-                    <p className="font-semibold">Parent Coordinator</p>
+                    <p className="font-semibold text-white">Parent Coordinator</p>
                     <p>parents@witscollege.edu</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const ParentResources = () => {
 
             <Card className="glass-effect border-emerald-400/30">
               <CardHeader>
-                <CardTitle className="text-emerald-100 font-orbitron">Quick Links</CardTitle>
+                <CardTitle className="text-white font-orbitron">Quick Links</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <a href="#" className="block text-emerald-200 hover:text-emerald-400 transition-colors font-orbitron">

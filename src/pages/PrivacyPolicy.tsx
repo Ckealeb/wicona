@@ -4,9 +4,9 @@ import React from "react";
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow bg-green-50">
+      <main className="flex-grow bg-white">
         <div className="campus-container py-16">
-          <h1 className="section-title">Privacy Policy</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-orbitron text-gray-900 text-center">Privacy Policy</h1>
           
           <div className="prose max-w-none bg-white rounded-lg p-8 shadow-sm">
             <p className="text-sm text-gray-600 mb-6">
@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Introduction</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
               <p className="text-gray-700 mb-4">
                 Wits College Namulanda ("we," "our," or "us") is committed to protecting your privacy. 
                 This Privacy Policy explains how your personal information is collected, used, and disclosed by Wits College Namulanda.
@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Information We Collect</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information We Collect</h2>
               <h3 className="text-xl font-medium text-gray-800 mb-3">Personal Information</h3>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
                 <li>Contact information (name, email address, phone number, mailing address)</li>
@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">How We Use Your Information</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your Information</h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>To provide educational services and support</li>
                 <li>To process applications and enrollment</li>
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Information Sharing</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information Sharing</h2>
               <p className="text-gray-700 mb-4">
                 We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, 
                 except in the following circumstances:
@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Data Security</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Security</h2>
               <p className="text-gray-700">
                 We implement appropriate security measures to protect your personal information against unauthorized access, 
                 alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
@@ -75,7 +75,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Your Rights</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights</h2>
               <p className="text-gray-700 mb-4">You have the right to:</p>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>Access your personal information</li>
@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-campus-blue mb-4">Contact Us</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Us</h2>
               <p className="text-gray-700">
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
