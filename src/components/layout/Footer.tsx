@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="footer-gradient text-white w-full shadow-neon">
+  return <footer className="footer-gradient text-white w-full shadow-neon">
       <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -14,12 +12,10 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-times font-bold text-lg tracking-wide text-white font-orbitron">WITS COLLEGE</span>
-                <span className="text-sm tracking-widest text-emerald-300/80 font-orbitron">NAMULANDA</span>
+                <span className="text-sm tracking-widest font-orbitron text-lime-400">NAMULANDA</span>
               </div>
             </Link>
-            <p className="text-sm mb-4 text-emerald-200/90 font-orbitron">
-              Empowering students with knowledge and skills for the digital future.
-            </p>
+            <p className="text-sm mb-4 font-orbitron text-green-100">Empowering students with knowledge, skills, and responsibility.</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-emerald-300 transition-colors">
                 <span className="sr-only">Facebook</span>
@@ -43,7 +39,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-playfair font-bold text-lg mb-4 neon-text">Quick Links</h3>
+            <h3 className="font-playfair font-bold text-lg mb-4 neon-text text-lime-400">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:text-emerald-300 transition-colors font-orbitron">About Us</Link></li>
               <li><Link to="/academics" className="hover:text-emerald-300 transition-colors font-orbitron">Academics</Link></li>
@@ -54,7 +50,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-playfair font-bold text-lg mb-4 neon-text">Resources</h3>
+            <h3 className="font-playfair font-bold text-lg mb-4 neon-text text-lime-400">Resources</h3>
             <ul className="space-y-2">
               <li><Link to="/parent-resources" className="hover:text-emerald-300 transition-colors font-orbitron">Parent Resources</Link></li>
               <li><Link to="/faculty" className="hover:text-emerald-300 transition-colors font-orbitron">Faculty & Staff</Link></li>
@@ -65,7 +61,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-playfair font-bold text-lg mb-4 neon-text">Contact Us</h3>
+            <h3 className="font-playfair font-bold text-lg mb-4 neon-text text-lime-400">Contact Us</h3>
             <address className="not-italic space-y-2 text-sm font-orbitron">
               <p>Namulada Campus</p>
               <p>Wakiso, Uganda</p>
@@ -89,8 +85,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
