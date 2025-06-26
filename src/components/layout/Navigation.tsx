@@ -189,7 +189,7 @@ const Navigation = () => {
               <div className="flex items-center space-x-1">
                 <Link 
                   to={link.path} 
-                  className="text-emerald-900 hover:text-emerald-600 transition-colors text-sm xl:text-base font-orbitron font-medium" 
+                  className="text-white hover:text-emerald-200 transition-colors text-sm xl:text-base font-orbitron font-medium" 
                   onClick={handleNavigation}
                 >
                   {link.title}
@@ -197,7 +197,7 @@ const Navigation = () => {
                 {link.children && (
                   <button
                     onClick={() => toggleDropdown(link.title)}
-                    className="p-1 text-emerald-700 hover:text-emerald-500 transition-colors"
+                    className="p-1 text-white hover:text-emerald-200 transition-colors"
                   >
                     <ChevronDown 
                       size={16} 
