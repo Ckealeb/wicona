@@ -57,7 +57,7 @@ const NewsEvents = () => {
   return <section className="py-16 bg-yellow-200">
       <div className="campus-container">
         <h2 className="section-title text-center">Stay Connected</h2>
-        <p className="section-subtitle text-center">
+        <p className="section-subtitle text-center text-teal-900">
           Keep up with the latest news, events, and happenings at Campus Digital Sphere
         </p>
 

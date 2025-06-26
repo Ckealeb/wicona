@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 const AboutSection = () => {
-  return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-emerald-900/30 via-slate-800/50 to-emerald-900/30">
+  return <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-emerald-900/30 via-slate-800/50 to-emerald-900/30">
       <div className="campus-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1">
@@ -21,9 +18,9 @@ const AboutSection = () => {
             
             <Tabs defaultValue="mission" className="mt-6 sm:mt-8">
               <TabsList className="grid w-full grid-cols-3 glass-effect border border-emerald-400/30 h-auto">
-                <TabsTrigger value="mission" className="text-xs sm:text-sm px-2 py-2 font-orbitron text-emerald-200 data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-100">Our Mission</TabsTrigger>
-                <TabsTrigger value="vision" className="text-xs sm:text-sm px-2 py-2 font-orbitron text-emerald-200 data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-100">Our Vision</TabsTrigger>
-                <TabsTrigger value="values" className="text-xs sm:text-sm px-2 py-2 font-orbitron text-emerald-200 data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-100">Core Values</TabsTrigger>
+                <TabsTrigger value="mission" className="text-xs sm:text-sm px-2 py-2 font-orbitron data-[state=active]:bg-emerald-500/20 text-zinc-950">Our Mission</TabsTrigger>
+                <TabsTrigger value="vision" className="text-xs sm:text-sm px-2 py-2 font-orbitron data-[state=active]:bg-emerald-500/20 text-zinc-950">Our Vision</TabsTrigger>
+                <TabsTrigger value="values" className="text-xs sm:text-sm px-2 py-2 font-orbitron data-[state=active]:bg-emerald-500/20 text-zinc-950">Core Values</TabsTrigger>
               </TabsList>
               <TabsContent value="mission" className="p-3 sm:p-4 rounded-lg mt-2 glass-effect border border-emerald-400/20">
                 <p className="text-emerald-200 text-sm sm:text-base">
@@ -59,11 +56,7 @@ const AboutSection = () => {
 
           <div className="relative order-1 lg:order-2">
             <div className="aspect-video rounded-lg overflow-hidden shadow-neon border border-emerald-400/30">
-              <img 
-                src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&q=80" 
-                alt="Campus grounds vintage" 
-                className="w-full h-full object-cover" 
-              />
+              <img src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&q=80" alt="Campus grounds vintage" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 to-transparent"></div>
             </div>
             <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 p-4 sm:p-6 rounded-lg shadow-neon max-w-xs glass-effect border border-emerald-400/30">
@@ -73,8 +66,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
